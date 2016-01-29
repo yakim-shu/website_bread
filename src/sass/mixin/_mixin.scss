@@ -1,0 +1,37 @@
+//===========================mixin==============================
+//背景-----------
+@mixin bg($name,$bg){
+	background: url("../images/#{$name}.#{$bg}");
+	width: image-width("../images/#{$name}.#{$bg}");
+	height: image-height("../images/#{$name}.#{$bg}");
+}
+
+//a:hover 連結-----------
+@mixin link($color, $color_hover){
+	text-decoration: none;
+	&:link,&:visited{
+		color: $color
+	}
+	&:hover, &:focus, &:active{
+		color: $color_hover;
+	}
+}
+
+/*************************extend*********************************/
+%text-hide {
+	white-space: nowrap;
+	text-indent: 100%;
+	overflow: hidden;
+}
+
+
+%clearfix {
+	&:after, &:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear:both;
+	}
+}
+

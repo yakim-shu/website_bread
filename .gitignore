@@ -1,0 +1,6 @@
+# IDE metadata. Don't track them!
+bower_components/
+node_modules/
+
+# Configuration. Keep private, don't track!
+config/
