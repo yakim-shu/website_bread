@@ -1,11 +1,30 @@
 /*************************layout.scss*********************************/
 .wrapper {
-    max-width: 850px;
-    height: 200px;
+	max-width: $wrapper_width;
     margin: 0 auto;
-    background: #999;
-    color: #333;
-    font-size: 40px;
-    border: 10px solid #333;
-    border-radius: 5px;
+    border: 1px solid #333;
+    header {
+		background: #333;
+		color: #fff;
+		padding: 10px;
+    }
+    main {
+		min-height: 200px;
+		background: #666;
+    }
+    footer {
+		height: 80px;
+		background: #eee;
+    }
+}
+
+
+header {
+	a.logo {
+		display: block;
+		width: 150px;
+		height: 50px;
+		margin: 0 auto;
+		background: #eee;
+	}
 }
