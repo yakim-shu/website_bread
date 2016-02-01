@@ -1,8 +1,9 @@
 /*************************variable.scss*********************************/
 //width
-$wrapper_width: 1170px;
+$width_desktop: 1170px;
 
 //color
+$color_bg: #eee;
 $color_link: #333;
 $color_hover: #000;
 $text_color: #000;
@@ -12,9 +13,9 @@ $body_color: #fff;
 $font-size: 16px;
 $font-family: Microsoft YaHei, Verdana, Geneva, sans-serif;
 $headings:
-	(h1, 1.5em),
-	(h2, 1.3em),
-	(h3, 1.2em),
+	(h1, 2em),
+	(h2, 1.8em),
+	(h3, 1.5em),
 	(h4, 1.1em),
 	(h5, 1em);
 $line-height: 1.8;
