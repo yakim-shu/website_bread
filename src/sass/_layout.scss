@@ -1,49 +1,41 @@
 /*************************layout.scss*********************************/
 html, body {
 	background: $color_bg;
-	height: 100%;
 	position: static;
 }
-
+//版型=========================
 .wrapper {
-	height: 100%;
-
     header {
     	width: 100%;
+		background: #333;
 		color: #fff;
 		padding: 10px;
 		position: fixed;
 		left: 0;
 		top: 0;
-		border: 1px solid gold;
 		z-index: 20;
     }
     main {
-    	height: 100%;
 		max-width: $width_desktop;
     	margin: 0 auto;
     	position: relative;
     }
     footer {
-		height: 80px;
-		background: #eee;
+    	position: relative;
+    	padding: 30px;
     }
 }
 
 //header-----------
 header {
 	a.logo {
+		@extend %text-hide;
 		display: block;
 		width: 150px;
-		height: 50px;
+		height: 30px;
 		margin: 0 auto;
 		background: #eee;
 	}
-}
-
-
-%center {
-	text-align: center;
 }
 
 //main-----------
@@ -51,7 +43,7 @@ main {
 	.story {
 		margin: 0 auto;
 		@extend %clearfix;
-		@extend %center;
+		text-align: center;
 		h2 {
 		}
 		h3 {
@@ -63,7 +55,7 @@ main {
 	}
 }
 //nav-----------
-nav{
+nav.nav_page{
 	position: fixed;
 	top: 200px;
 	right: 10px;
@@ -81,12 +73,35 @@ nav{
 		background:gold;
 	}
 }
-//sence-----------
+
+//footer-----------
+footer {
+	nav {
+		text-align: center;
+		@extend %clearfix;
+		li {
+			display: inline-block;
+			margin-right: 10px;
+		}
+		li a{
+			@extend %text-hide;
+			display: block;
+			width: 40px;
+			height: 40px;
+			border-radius: 20px;
+			background: #666;
+			&:hover {
+				background: #999;
+			}
+		}
+	}
+}
+
+//sence=========================
 .sence {
 	width: 100%;
-	min-height: 500px;
 	left: 0;
-	padding: 80px 35px 20px 30px;
+	padding: 50px 35px 20px 30px;
 }
 .sence_1 {
 	background: #999;
@@ -97,13 +112,10 @@ nav{
 	top: 100%;
 }
 .sence_3 {
-	background: #666;
+	background: #ddd;
 	top: 200%;
 }
-.sence_4 {
-	background: #999;
-	top: 300%;
-}
+
 
 .scroll {
 	width:100px;

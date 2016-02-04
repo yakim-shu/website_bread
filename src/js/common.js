@@ -1,30 +1,41 @@
 // JavaScript Document
 
 //scroll ============================================
-$("html,body").animate({scrollTop: 0});
+$(function(){
+	$("html,body").animate({scrollTop: 0});
 
-$(window).scroll(function(){
-	$("nav>a").click(function() {
-        if ($(this).hasClass("active")) return;
-        var target = $(".sence").eq($(this).index());
-        var position = target.offset().top - $(window).height() / 2 + target.outerHeight(true) / 2;
-        $("html,body").stop().animate({
-            scrollTop: position
-        });
-    });
-    var st = $(window).scrollTop();
-    var wh = $(window).height();
-    var index = 0;
-    $(".sence").each(function(i,element){
-        if(st > $(".sence").eq(i).offset().top +$(".sence").eq(i).outerHeight(true) / 2 - wh ){
-            index = i;
-        }
-    });
-    $("nav>a").eq(index).addClass("active").siblings().removeClass("active");
-}).scroll();
+	$(window).scroll(function(){
+		$("nav>a").click(function() {
+	        if ($(this).hasClass("active")) return;
+	        var target = $(".sence").eq($(this).index());
+	        var position = target.offset().top - $(window).height() / 2 + target.outerHeight(true) / 2;
+	        $("html,body").stop().animate({
+	            scrollTop: position
+	        });
+	    });
+	    var st = $(window).scrollTop();
+	    var wh = $(window).height();
+	    var index = 0;
+	    $(".sence").each(function(i,element){
+	        if(st > $(".sence").eq(i).offset().top +$(".sence").eq(i).outerHeight(true) / 2 - wh ){
+	            index = i;
+	        }
+	    });
+	    $("nav>a").eq(index).addClass("active").siblings().removeClass("active");
+	}).scroll();
+});
 
-
-
+//輪播 ============================================
+$(function(){
+	$('.gallery_1 .run .inner').bxSlider({
+		controls : true,
+		randomStart : true,  //亂數初始張
+		mode : 'horizontal', //轉場效果
+		auto : true,         //自動輪播
+		pause : 3000,	 //單張停留時間
+		adaptiveHeight: true
+	});
+});
 
 // gototop 模組======================================
 $(function(){
