@@ -1,19 +1,20 @@
 /*************************layout.scss*********************************/
+
+//版型=========================
 html, body {
 	background: $color_bg;
 	position: static;
 }
-//版型=========================
 .wrapper {
     header {
     	width: 100%;
-		background: #333;
 		color: #fff;
 		padding: 10px;
 		position: fixed;
 		left: 0;
 		top: 0;
 		z-index: 20;
+		transition: all .3s ease-out;
     }
     main {
 		max-width: $width_desktop;
@@ -26,8 +27,11 @@ html, body {
     }
 }
 
-//header-----------
+//header=========================
 header {
+	&.active {
+		background: rgba(0,0,0,0.7);
+	}
 	a.logo {
 		@extend %text-hide;
 		display: block;
@@ -38,7 +42,7 @@ header {
 	}
 }
 
-//main-----------
+//main=========================
 main {
 	.story {
 		margin: 0 auto;
@@ -54,8 +58,29 @@ main {
 		}
 	}
 }
-//nav-----------
+
+//sence=========================
+.sence {
+	width: 100%;
+	left: 0;
+	padding: 50px 10px 20px 10px;
+	&.sence_1{
+		background: #999;
+		top: 0;
+	}
+	&.sence_2{
+		background: #eee;
+		top: 100%;
+	}
+	&.sence_3{
+		background: #ddd;
+		top: 200%;
+	}
+}
+
+//nav=========================
 nav.nav_page{
+	display: none;
 	position: fixed;
 	top: 200px;
 	right: 10px;
@@ -68,13 +93,13 @@ nav.nav_page{
 		border-radius: 10px;
 		margin-bottom: 15px;
 		text-indent: -9999px;
-	}
-	a.active {
-		background:gold;
+		&.active {
+			background:gold;
+		}
 	}
 }
 
-//footer-----------
+//footer=========================
 footer {
 	nav {
 		text-align: center;
@@ -97,36 +122,22 @@ footer {
 	}
 }
 
-//sence=========================
-.sence {
-	width: 100%;
-	left: 0;
-	padding: 50px 35px 20px 30px;
-}
-.sence_1 {
-	background: #999;
-	top: 0;
-}
-.sence_2 {
-	background: #eee;
-	top: 100%;
-}
-.sence_3 {
-	background: #ddd;
-	top: 200%;
-}
 
-
-.scroll {
-	width:100px;
-	height:100px;
-	background: gold;
-	position: fixed;
-	bottom: 50px;
-	z-index: 20;
-}
-
+/*=====================media-query=======================*/
+//pad============================
 @include m_first(pad) {
+
+	//nav-------------
+	nav.nav_page {
+		display: block;
+	}
+
+	//sence-------------
+	.sence {
+		padding: 50px 35px 20px 30px;
+	}
+
+	//story-------------
 	main .story .c1{
 			float: left;
 			width: 38%;
@@ -137,7 +148,5 @@ footer {
 			float: right;
 			width: 60%;
 			border: 1px solid #333;
-		p {
-		}
 	}
 }
