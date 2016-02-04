@@ -5,6 +5,12 @@ $(function(){
 	$("html,body").animate({scrollTop: 0});
 
 	$(window).scroll(function(){
+
+		//nav=====================
+	    var st = $(window).scrollTop();
+	    var wh = $(window).height();
+	    var index = 0;
+
 		$("nav>a").click(function() {
 	        if ($(this).hasClass("active")) return;
 	        var target = $(".sence").eq($(this).index());
@@ -13,15 +19,20 @@ $(function(){
 	            scrollTop: position
 	        });
 	    });
-	    var st = $(window).scrollTop();
-	    var wh = $(window).height();
-	    var index = 0;
 	    $(".sence").each(function(i,element){
 	        if(st > $(".sence").eq(i).offset().top +$(".sence").eq(i).outerHeight(true) / 2 - wh ){
 	            index = i;
 	        }
 	    });
 	    $("nav>a").eq(index).addClass("active").siblings().removeClass("active");
+
+	    //header=====================
+	    if (st>100){
+	    	$("header").addClass("active");
+	    }else {
+	    	$("header").removeClass("active");
+	    }
+
 	}).scroll();
 });
 

@@ -2,54 +2,57 @@
 /*************************作品資訊頁*********************************/
 //輪播================================
 .gallery_1 {
-	.run {
-		.bx-wrapper {
-			max-width: 100%;
-			position: relative;
-		}
+	margin-bottom: 20px;
+	.bx-wrapper{
+		max-width: 100%;
+		position: relative;
+	}
+	.bx-controls {
+		width: 100%;
 	}
 }
 
-//控制鈕---------------
-.gallery_1 .bx-controls {
-	width: 100%;
-	//左右鈕---------------------
-	.bx-controls-direction {
-		%gallery_btn {
-			display: block;
-			width: 50px;
-			height: 50px;
-			border: 1px solid #333;
-			position: absolute;
-			top: 50%;
-			margin-top: -25px;
-		}
-		.bx-prev {
-			@extend %gallery_btn;
-			left: 0;
-		}
-		.bx-next {
-			@extend %gallery_btn;
-			right: 0;
-		}
-	}
-	//下面點點鈕---------------------
-	.bx-pager {
-		width: 100%;
-		height: 20px;
+//左右鈕---------------------
+.gallery_1 .bx-controls	.bx-controls-direction {
+	%gallery_btn {
+		display: block;
+		width: 50px;
+		height: 50px;
+		border: 1px solid #333;
 		position: absolute;
-		bottom: 10px;
-		text-align: center;
-		.bx-pager-item {
-			@extend %text-hide;
-			display: inline-block;
-			width: 15px;
-			height: 15px;
-			border-radius: 15px;
-			margin-right: 10px;
-			background: #999;
-			a {
-				display:block;
+		top: 50%;
+		margin-top: -25px;
+	}
+	.bx-prev {
+		@extend %gallery_btn;
+		left: 0;
+	}
+	.bx-next {
+		@extend %gallery_btn;
+		right: 0;
+	}
+}
+
+//下面點點鈕---------------------
+.gallery_1 .bx-controls .bx-pager {
+	display: none;
+	width: 100%;
+	height: 20px;
+	position: absolute;
+	bottom: 10px;
+	text-align: center;
+	.bx-pager-item {
+		@extend %text-hide;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		border-radius: 15px;
+		margin-right: 10px;
+		background: #999;
+		a {
+			display:block;
+			&.active {
+				background: gold;
 			}
 		}
 	}
@@ -64,13 +67,6 @@
 }
 
 //文字資訊================================
-//layout---------------
-.main_work{
-	.c1 {
-	}
-	.c2 {
-	}
-}
 //c1---------------
 .main_work .info .c1 {
 	h4 {
@@ -80,6 +76,7 @@
 		font-size: 15px;
 	}
 }
+
 //c2---------------
 .main_work .info .c2{
 	.title {
@@ -102,5 +99,29 @@
 	}
 	p {
 		font-size: 15px;
+	}
+}
+
+
+/*=====================media-query=======================*/
+//pad============================
+@include m_first(pad) {
+
+	//下面點點鈕-------------
+	.gallery_1 .bx-controls .bx-pager{
+		display: block;
+	}
+
+	//main_work版型-------------
+	.main_work{
+		@extend %clearfix;
+		.c1 {
+			width: 55%;
+			float: left;
+		}
+		.c2 {
+			width: 40%;
+			float: right;
+		}
 	}
 }

@@ -1,7 +1,6 @@
 /*************************block.scss*********************************/
 
 //part_pictxt_1================================
-
 @mixin pictxt($col, $gap) {
 	width: ( 100% - $gap * $col *2 ) / $col;
 	margin: 0 $gap $gap*2 $gap;
@@ -15,29 +14,46 @@
 	@include pictxt(2, 0.5%);
 	display: block;
 	float: left;
+	// border: 1px solid red;
+	margin-bottom: 10px;
 	.pic {
+		margin-bottom: 5px;
 		img {
 			max-width: 100%;
 			height: auto;
 		}
 	}
 	h3 {
-		background: #333;
-		color: #fff;
-		padding: 0px 10px;
+		font-size: 18px;
+		line-height: 1.3em;
+		color: #333;
 	}
 	span.label {
-
+		display: inline-block;
+		font-size: 14px;
+		line-height: 1.4em;
+		padding: 0px 5px;
+		background: #999;
+		color: #fff;
 	}
 }
-//pad以上
+
+
+/*=====================media-query=======================*/
+//pad============================
 @include m_first(pad) {
+
+	//item---------------------
 	.part_pictxt_1 a.item {
 		@include pictxt(3, 0.5%);
 		position: relative;
 		display: table-cell;
 		vertical-align: middle;
-		//標題-------------
+		//圖
+		.pic {
+			margin-bottom: 0;
+		}
+		//標題
 		h3 {
 			position: absolute;
 			left: 0;
@@ -45,25 +61,21 @@
 			width: 100%;
 			height: 100%;
 			text-align: center;
+			background: #333;
+			color: #fff;
 			padding-top: 30%;
 			transition: all .5s;
 			opacity: 0;
 		}
-		&:hover {
-			h3 {
-				opacity: 0.7;
-			}
+		&:hover h3{
+			opacity: 0.8;
 		}
-		//label-------------
+		//label
 		span.label{
-			// display: none;
-			display: inline-block;
-			padding: 0px 5px;
-			background: #999;
-			color: #fff;
 			position: absolute;
 			right: 5px;
 			bottom: 5px;
+			padding: 3px 10px;
 		}
 	}
 }
