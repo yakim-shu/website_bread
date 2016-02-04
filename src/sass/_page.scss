@@ -1,0 +1,106 @@
+/*************************page.scss*********************************/
+/*************************作品資訊頁*********************************/
+//輪播================================
+.gallery_1 {
+	.run {
+		.bx-wrapper {
+			max-width: 100%;
+			position: relative;
+		}
+	}
+}
+
+//控制鈕---------------
+.gallery_1 .bx-controls {
+	width: 100%;
+	//左右鈕---------------------
+	.bx-controls-direction {
+		%gallery_btn {
+			display: block;
+			width: 50px;
+			height: 50px;
+			border: 1px solid #333;
+			position: absolute;
+			top: 50%;
+			margin-top: -25px;
+		}
+		.bx-prev {
+			@extend %gallery_btn;
+			left: 0;
+		}
+		.bx-next {
+			@extend %gallery_btn;
+			right: 0;
+		}
+	}
+	//下面點點鈕---------------------
+	.bx-pager {
+		width: 100%;
+		height: 20px;
+		position: absolute;
+		bottom: 10px;
+		text-align: center;
+		.bx-pager-item {
+			@extend %text-hide;
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			border-radius: 15px;
+			margin-right: 10px;
+			background: #999;
+			a {
+				display:block;
+			}
+		}
+	}
+}
+
+//item---------------
+.gallery_1 .item{
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+//文字資訊================================
+//layout---------------
+.main_work{
+	.c1 {
+	}
+	.c2 {
+	}
+}
+//c1---------------
+.main_work .info .c1 {
+	h4 {
+		font-size: 22px;
+	}
+	p {
+		font-size: 15px;
+	}
+}
+//c2---------------
+.main_work .info .c2{
+	.title {
+		font-size: 15px;
+		position: relative;
+		padding-left: 10px;
+		margin-top: 10px;
+		color: #666;
+		&:before {
+			display: block;
+			content: "";
+			width: 5px;
+			height: 15px;
+			background: #999;
+			position: absolute;
+			left: 0px;
+			top: 6px;
+
+		}
+	}
+	p {
+		font-size: 15px;
+	}
+}
