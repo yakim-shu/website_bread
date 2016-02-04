@@ -1,1 +1,37 @@
 /*************************block.scss*********************************/
+@mixin pictxt($col, $gap) {
+	width: ( 100% - $gap * $col *2 ) / $col;
+	margin: 0 $gap;
+
+}
+
+.part_pictxt_1 {
+	border: 1px solid gold;
+	@extend %clearfix;
+}
+.part_pictxt_1 .item {
+	float: left;
+	@include pictxt(2, 0.5%);
+	margin-bottom: 10px;
+	a.pic {
+		display: block;
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	h3 {
+		background: #333;
+		color: #fff;
+		padding: 5px 10px;
+	}
+	span.label {
+
+	}
+}
+
+@include m_first(pad) {
+	.part_pictxt_1 .item {
+		@include pictxt(3, 0.5%);
+	}
+}
