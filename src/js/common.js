@@ -11,10 +11,12 @@ $(function(){
 	    var wh = $(window).height();
 	    var index = 0;
 
-		$("nav>a").click(function() {
+		$("nav.menu_page").click(function() {
+			console.log("dddd");
 	        if ($(this).hasClass("active")) return;
-	        var target = $(".sence").eq($(this).index());
+			var target = $(".sence").eq($(this).index());
 	        var position = target.offset().top - $(window).height() / 2 + target.outerHeight(true) / 2;
+	        console.log(position);
 	        $("html,body").stop().animate({
 	            scrollTop: position
 	        });
@@ -24,7 +26,7 @@ $(function(){
 	            index = i;
 	        }
 	    });
-	    $("nav>a").eq(index).addClass("active").siblings().removeClass("active");
+	    $("nav.menu_page a").eq(index).addClass("active").siblings().removeClass("active");
 
 	    //header=====================
 	    if (st>100){
