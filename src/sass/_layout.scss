@@ -6,6 +6,7 @@ html, body {
 	position: static;
 }
 .wrapper {
+	display: flex;
     header {
     	width: 100%;
 		color: #fff;
@@ -79,22 +80,29 @@ main {
 }
 
 //nav=========================
-nav.nav_page{
-	display: none;
+nav.menu_page{
+	display: flex;
+	align-items: center;
 	position: fixed;
-	top: 200px;
-	right: 10px;
-	z-index: 100;
-	a {
-		display: block;
-		width: 15px;
-		height: 15px;
-		background: #fff;
-		border-radius: 10px;
-		margin-bottom: 15px;
-		text-indent: -9999px;
-		&.active {
-			background:gold;
+	height: 100%;
+	right: 0;
+	.menu {
+		border: 1px solid green;
+		display: flex;
+		flex-direction: column;
+		top: 200px;
+		right: 10px;
+		z-index: 100;
+		a {
+			width: 15px;
+			height: 15px;
+			background: #fff;
+			border-radius: 10px;
+			margin-bottom: 15px;
+			text-indent: -9999px;
+			&.active {
+				background:gold;
+			}
 		}
 	}
 }
@@ -129,7 +137,8 @@ footer {
 
 	//nav-------------
 	nav.nav_page {
-		display: block;
+		// display: block;
+		display: flex;
 	}
 
 	//sence-------------
