@@ -6,7 +6,6 @@ html, body {
 	position: static;
 }
 .wrapper {
-	display: flex;
     header {
     	width: 100%;
 		color: #fff;
@@ -30,8 +29,10 @@ html, body {
 
 //header=========================
 header {
+	display:none;
 	&.active {
 		background: rgba(0,0,0,0.7);
+		display:block;
 	}
 	a.logo {
 		@extend %text-hide;
@@ -47,16 +48,25 @@ header {
 main {
 	.story {
 		margin: 0 auto;
-		@extend %clearfix;
 		text-align: center;
-		h2 {
+		display: flex;
+		justify-content: center;
+		flex-direction:column;
+		position:absolute;
+		width: 100%;
+		height:100%;
+		z-index:20;
+		@extend %clearfix;
+		h1 {
+			align-self: center;
+			color:#fff;
+			text-shadow:0 0 10px #333;
 		}
 		h3 {
+			align-self: center;
+			color:#fff;
 		}
-		p {
-			text-align: left;
-			margin-bottom: 15px;
-		}
+
 	}
 }
 
@@ -64,19 +74,27 @@ main {
 .sence {
 	width: 100%;
 	left: 0;
-	padding: 50px 10px 20px 10px;
+	padding: 0px;
+	margin-bottom:15%;
+	&.sence_0{
+		top: 0;
+		position: relative;
+	}
 	&.sence_1{
-		background: #999;
+		background: #fff;
 		top: 0;
 	}
 	&.sence_2{
-		background: #eee;
+		background: #fff;
 		top: 100%;
 	}
 	&.sence_3{
-		background: #ddd;
+		background: #fff;
 		top: 200%;
 	}
+}
+
+.map_google{
 }
 
 //nav=========================
@@ -86,17 +104,16 @@ nav.menu_page{
 	position: fixed;
 	height: 100%;
 	right: 0;
+	z-index: 9999;
 	.menu {
-		border: 1px solid green;
 		display: flex;
 		flex-direction: column;
 		top: 200px;
 		right: 10px;
-		z-index: 100;
 		a {
 			width: 15px;
 			height: 15px;
-			background: #fff;
+			background: #333;
 			border-radius: 10px;
 			margin-bottom: 15px;
 			text-indent: -9999px;
@@ -130,10 +147,123 @@ footer {
 	}
 }
 
+//sence_1 安心食材介紹 =========================
+.sence_1 .col{
+	width: 70%;
+	text-align: center;
+	margin:0px auto 10% auto;
+	a.pic {
+		display: block;
+		width:250px;
+		height:250px;
+		margin: 0 auto;
+		img {
+			max-width:100%;
+			height:auto;
+		}
+	}
+	h3 {
+		font-size:20px;
+	}
+	p.summary {
+		font-size:16px;
+	}
+}
 
+//sence_2 商品列表 =========================
+.sence_2 .col{
+	.tab {
+		text-align: center;
+		.tab_menu {
+
+		}
+		.tab_content {
+
+		}
+	}
+}
+.sence_2 .tab .tab_menu {
+	display: block;
+	max-width: 800px;
+	text-align: center;
+	margin:0 auto 30px auto;
+	padding: 10px;
+	@extend %clearfix;
+	li {
+		display:inline-block;
+		width:100px;
+		float:left;
+		font-size:18px;
+		border:1px solid #999;
+		margin-bottom:10px;
+		margin-right:10px;
+		a {
+			display:block;
+			width:100%;
+			height:100%;
+			text-align:center;
+			&:hover{
+				background:#999;
+				color:#fff;
+			}
+		}
+		&.current a{
+			background:#999;
+			color:#fff;
+		}
+
+	}
+}
+
+//sence2 Menu
+.sence_2 .col{
+	.tab {
+		text-align: center;
+		.tab_menu {
+
+		}
+		.tab_content {
+
+		}
+	}
+}
+
+//sence_3 店鋪與訂購資訊 =========================
+.sence_3 {
+	overflow: hidden;
+	.row {
+		width:90%;
+		text-align: center;
+		border-radius: 5px;
+		border: 1px solid #ddd;
+		padding: 20px;
+		margin: 0 auto 20px auto;
+		h3 {
+			font-size: 20px;
+			margin-bottom:20px;
+		}
+		p {
+			font-size: 15px;
+		}
+	}
+}
 /*=====================media-query=======================*/
 //pad============================
 @include m_first(pad) {
+
+	//main=========================
+	main {
+		.story {
+			h1 {
+				font-size: 40px;
+			}
+			h3 {
+				align-self: center;
+				color:#fff;
+			}
+
+		}
+	}
 
 	//nav-------------
 	nav.nav_page {
@@ -143,19 +273,53 @@ footer {
 
 	//sence-------------
 	.sence {
-		padding: 50px 35px 20px 30px;
 	}
 
-	//story-------------
-	main .story .c1{
+	//sence_1=========================
+	.sence_1 .col{
+		width: 70%;
+		@extend %clearfix;
+			a.pic {
+				float: left;
+				margin-right:5%;
+				img {
+					max-width:100%;
+					height:auto;
+				}
+			}
+			h3 {
+				font-size:20px;
+			}
+			p.summary {
+				font-size:16px;
+			}
+		&:nth-of-type(2){
+			a.pic {
+				float:right;
+				margin:0 0 0 5%;
+			}
+		}
+	}
+
+	//sence_3=========================
+	.sence_3 {
+		@extend %clearfix;
+		.row {
+			max-width: 800px;
+			width: 47%;
 			float: left;
-			width: 38%;
-			min-height: 200px;
-			border: 1px solid #333;
+			margin: 0 5% 5% 0;
+			&:nth-of-type(2){
+				margin-right:0;
+			}
+			h3 {
+				font-size: 20px;
+				margin-bottom:20px;
+			}
+			p {
+				font-size: 15px;
+			}
 	}
-	main .story .c2{
-			float: right;
-			width: 60%;
-			border: 1px solid #333;
-	}
+}
+
 }

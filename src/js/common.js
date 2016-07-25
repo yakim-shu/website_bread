@@ -11,11 +11,10 @@ $(function(){
 	    var wh = $(window).height();
 	    var index = 0;
 
-		$("nav.menu_page").click(function() {
-			console.log("dddd");
+		$("nav.menu_page a").click(function() {
 	        if ($(this).hasClass("active")) return;
 			var target = $(".sence").eq($(this).index());
-	        var position = target.offset().top - $(window).height() / 2 + target.outerHeight(true) / 2;
+	        var position = target.offset().top - $(window).height() / 2 + target.outerHeight(true) / 2 -150;
 	        console.log(position);
 	        $("html,body").stop().animate({
 	            scrollTop: position
@@ -38,15 +37,62 @@ $(function(){
 	}).scroll();
 });
 
+
+// 進入商品內頁 ======================================
+$(function(){
+	var num = 0;
+	$(".tab_content .part_pictxt_1 .item").on("click", function(){
+
+		$(this).parent(".part_pictxt_1").prepend($(".main_work"));
+		$(this).parent(".part_pictxt_1").find(".main_work").show();
+
+		// scroll
+		var target = $(".main_work").offset().top-50;
+		var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //修正 Opera 問題
+		$body.animate({scrollTop: target}, 1000);
+		// 輪播
+		if ( num==0 ){
+			$('.gallery_1 .run .inner').bxSlider({
+				randomStart : true,  //亂數初始張
+				mode : 'horizontal', //轉場效果
+				auto : true,         //自動輪播
+				pause : 3000,	 //單張停留時間
+				adaptiveHeight: true,
+				preloadImages : "all",
+				slideWidth : 600
+			});
+		}
+		num++;
+
+	});
+});
+
+
+//tab ============================================
+$(function(){
+	$(".tab_menu li").eq(0).addClass("current");
+	$(".tab_content .part_pictxt_1").hide().eq(0).show();
+
+	$(".tab_menu li").on("click", function(){
+		var iNo = $(".tab_menu li").index(this);
+		$(".tab_menu li").removeClass("current").eq(iNo).addClass("current");
+		$(".tab_content .part_pictxt_1").hide().eq(iNo).show();
+	});
+
+
+});
+
+
 //輪播 ============================================
 $(function(){
-	$('.gallery_1 .run .inner').bxSlider({
-		controls : true,
+
+	$('.gallery_2 .run .inner').bxSlider({
+		controls : false,
+		adaptiveHeight: false,
 		randomStart : true,  //亂數初始張
 		mode : 'horizontal', //轉場效果
 		auto : true,         //自動輪播
-		pause : 3000,	 //單張停留時間
-		adaptiveHeight: true
+		pause : 5000,	 //單張停留時間
 	});
 });
 
