@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width; initial-scale=1; minimum-scale=1, maximum-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 	<title>【demo】prototype </title>
 	<link rel="stylesheet" href="dist/css/style.css">
 	<script src="src/js/jquery.js"></script>
@@ -15,7 +15,7 @@
 
 		<!--header-->
 		<header>
-			<h1><a href="" class="logo">logo</a></h1>
+			<h1><a href="" class="logo">有間麵包店</a></h1>
 		</header>
 		<!--/header-->
 		<nav class="menu_page">
@@ -23,114 +23,442 @@
 		        <a href="javascript:;">TOP</a>
 		        <a href="javascript:;">Content</a>
 		        <a href="javascript:;">1</a>
+		        <a href="javascript:;">1</a>
+		        <a href="javascript:;">1</a>
+		        <a href="javascript:;">1</a>
 			</div>
 	    </nav>
 		<!--main-->
 		<main>
-			<!--自我介紹-->
+			<!--大圖輪播-->
+			<div class="sence sence_0">
+				<!--輪播-->
+	            <div class="gallery_2">
+	            	<div class="story">
+						<h1>有間麵包店</h1>
+						<h3>我的堅持，完全無添加</h3>
+					</div>
+	                <!--滾動-->
+	                <div class="run">
+	                    <div class="inner">
+	                        <div class="item"><img src="src/images/pic_a_1.jpg"/></div>
+	                        <div class="item"><img src="src/images/pic_a_2.jpg"/></div>
+	                        <div class="item"><img src="src/images/pic_a_3.jpg"/></div>
+	                    </div>
+	                </div>
+	                <!--/滾動-->
+	            </div>
+	            <!--/輪播-->
+			</div>
+			<!--/大圖輪播-->
+
+			<!--安心食材-->
 			<div class="sence sence_1">
-				<div class="story">
-					<h2>我是標題</h2>
-					<h3>很長很長的副標</h3>
-					<div class="c1"></div>
-					<div class="c2">
-						<P>內文一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字</P>
-						<P>內文一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字文一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字</P>
-						<P>內文一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字一堆字文一堆字一堆字一堆字一堆字</P>
-					</div>
-				</div>
+				<!--col-->
+	            <div class="col">
+	            	<a href="#" class="pic">
+	            		<img src="src/images/pic_b_1.jpg" height="500" width="500" alt="">
+	            	</a>
+            		<h3>安心食材</h3>
+            		<p class="summary">樂活料理食譜採用有機小農種植在地食材及各式100%純天然安心蔬果、無化學添加有機食品、綠色食品，讓您透過無毒飲食的方式來做食療養生、健康排毒。讓您吃的美味、健康又養生!</p>
+	            </div>
+	            <!--col-->
+	            <div class="col">
+					<a href="#" class="pic">
+	            		<img src="src/images/pic_b_2.jpg" height="500" width="500" alt="">
+	            	</a>
+            		<h3>有機無添加的麵粉</h3>
+            		<p class="summary">全麥麵粉則是整個小麥在磨粉時，僅經過碾碎，而不須經過除去麩皮程序，所以是整粒小麥包含了麩皮與胚乳全部一齊磨成粉即稱全麥麵粉。經過專家多項研究証明，小麥中的麩皮含有營養價值極高的維生素，如摻在麵粉中製作出全麥麵包來食用，可幫助我們保持健康而有活力。</p>
+	            </div>
+	            <!--col-->
 			</div>
-			<!--/自我介紹-->
-			<!--作品列表-->
+			<!--/安心食材-->
+
+			<!--商品列表-->
 			<div class="sence sence_2">
-				<div class="part_pictxt_1">
-					<!--組-->
-					<a class="item" href="#">
-						<div class="pic"><img src="http://fakeimg.pl/400x300/ccc/?text=400x300"></div>
-						<h3>我是標題</h3>
-						<span class="label">我是label</span>
-					</a>
-					<!--組-->
-					<a class="item" href="#">
-						<div class="pic"><img src="http://fakeimg.pl/400x300/ccc/?text=400x300"></div>
-						<h3>我是標題</h3>
-						<span class="label">我是label</span>
-					</a>
-					<!--組-->
-					<a class="item" href="#">
-						<div class="pic"><img src="http://fakeimg.pl/400x300/ccc/?text=400x300"></div>
-						<h3>我是標題</h3>
-						<span class="label">我是label</span>
-					</a>
-					<!--組-->
-					<a class="item" href="#">
-						<div class="pic"><img src="http://fakeimg.pl/400x300/ccc/?text=400x300"></div>
-						<h3>我是標題</h3>
-						<span class="label">我是label</span>
-					</a>
-					<!--組-->
-					<a class="item" href="#">
-						<div class="pic"><img src="http://fakeimg.pl/400x300/ccc/?text=400x300"></div>
-						<h3>我是標題</h3>
-						<span class="label">我是label</span>
-					</a>
-					<!--組-->
-					<a class="item" href="#">
-						<div class="pic"><img src="http://fakeimg.pl/400x300/ccc/?text=400x300"></div>
-						<h3>我是標題</h3>
-						<span class="label">我是label</span>
-					</a>
-					<!--組-->
-				</div>
-			</div>
-			<!--/作品列表-->
-			<!--作品頁-->
-			<div class="sence sence_3">
-				<!--main_work-->
-				<div class="main_work">
-					<!--輪播 開始-->
-		            <div class="gallery_1">
-		                <!--滾動 開始-->
-		                <div class="run">
-		                    <div class="inner">
-		                        <div class="item"><img src="http://fakeimg.pl/1000x400/ccc/?text=silde1"/></div>
-		                        <div class="item"><img src="http://fakeimg.pl/1000x400/bbb/?text=silde2"/></div>
-		                        <div class="item"><img src="http://fakeimg.pl/1000x400/ccc/?text=silde3"/></div>
-		                    </div>
-		                </div>
-		                <!--滾動 結束-->
-		            </div>
-		            <!--輪播 結束-->
-					<!--介紹-->
-					<div class="info">
-						<!--c1-->
-						<div class="c1">
-							<h4>作品名稱作品名稱作品名稱</h4>
-							<p class="summary">我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要</p>
+				<div class="tab">
+					<!--menu-->
+					<ul class="tab_menu">
+						<li><a href="javascript:;">吐司</a></li>
+						<li><a href="javascript:;">歐式手感</a></li>
+						<li><a href="javascript:;">果子系列</a></li>
+						<li><a href="javascript:;">鹹胖</a></li>
+						<li><a href="javascript:;">貝果</a></li>
+						<li><a href="javascript:;">當月時令</a></li>
+						<li><a href="javascript:;">經典原味</a></li>
+					</ul>
+					<!--/menu-->
+					<!--content-->
+					<div class="tab_content">
+						<!--group-->
+						<div class="part_pictxt_1">
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_1.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_1.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_1.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_1.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
 						</div>
-						<!--/c1-->
-						<!--c2-->
-						<div class="c2">
-							<div class="info">
-								<div class="title">網頁類型</div>
-								<p>RWD</p>
-								<div class="title">使用技能</div>
-								<p>HTML5, CSS3, JQuery</p>
-								<div class="title">日期</div>
-								<time>2016-02-03</time>
-								<div class="title">連結</div>
-								<a href="">連結</a>
-							</div>
+						<!--/group-->
+						<!--group-->
+						<div class="part_pictxt_1">
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_2.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_2.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_2.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
 						</div>
-						<!--/c2-->
+						<!--/group-->
+						<!--group-->
+						<div class="part_pictxt_1">
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_3.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_3.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_3.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+						</div>
+						<!--/group-->
+						<!--group-->
+						<div class="part_pictxt_1">
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_1.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_1.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_1.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_1.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+						</div>
+						<!--/group-->
+						<!--group-->
+						<div class="part_pictxt_1">
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_2.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_2.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_2.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+						</div>
+						<!--/group-->
+						<!--group-->
+						<div class="part_pictxt_1">
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_3.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_3.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_3.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+						</div>
+						<!--/group-->
+						<!--group-->
+						<div class="part_pictxt_1">
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_3.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_3.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+							<!--組-->
+							<a class="item" href="javascript:;">
+								<div class="pic"><img src="src/images/pic_c_3.jpg"></div>
+								<h3>我是標題</h3>
+								<span class="label">我是label</span>
+							</a>
+						</div>
+						<!--/group-->
 					</div>
-					<!--/介紹-->
+					<!--/content-->
 				</div>
-				<!--/main_work-->
 			</div>
-			<!--/作品頁-->
+			<!--/商品列表-->
+
+			<!--商品列表-->
+			<div class="sence sence_2">
+				<div class="menu_1">
+					<!--col-->
+					<div class="col">
+						<div class="item">
+							<h2>經典菜單</h2>
+							<ul>
+								<li>經典蔥花<span>35元</span></li>
+								<li>菜圃蛋麵包<span>40元</span></li>
+								<li>貝果(一份四個)<span>120元</span></li>
+								<li>餐包(一份四個)<span>120元</span></li>
+							</ul>
+						</div>
+					</div>
+					<!--col-->
+					<div class="col">
+						<div class="item">
+							<h2>歐式手感 (全素)</h2>
+							<ul>
+								<li>歐鄉全麥<span>100元</span></li>
+								<li>手感核桃<span>110元</span></li>
+								<li>手感花豆核桃<span>120元</span></li>
+								<li>手感起司<span>120元</span></li>
+								<li>自家紅豆<span>120元</span></li>
+							</ul>
+						</div>
+						<div class="item">
+							<h2>吐司</h2>
+							<ul>
+								<li>有間吐司<span>100元</span></li>
+								<li>脆皮吐司<span>120元</span></li>
+								<li>英式奶油吐司<span>150元</span></li>
+								<li>培根乳酪吐司<span>180元</span></li>
+							</ul>
+						</div>
+						<div class="item">
+							<h2>果子系列</h2>
+							<ul>
+								<li>波蘿麵包<span>40元</span></li>
+								<li>自家奶酥波蘿<span>45元</span></li>
+								<li>螺旋麵包<span>35元</span></li>
+							</ul>
+						</div>
+						<div class="item">
+							<h2>鹹胖</h2>
+							<ul>
+								<li>經典蔥花<span>35元</span></li>
+								<li>菜圃蛋麵包<span>45元</span></li>
+							</ul>
+						</div>
+						<div class="item">
+							<h2>貝果</h2>
+							<ul>
+								<li>義式起司貝果<span>50元</span></li>
+								<li>藍美莓貝果<span>55元</span></li>
+								<li>芝麻貝果<span>50元</span></li>
+								<li>花生貝果<span>50元</span></li>
+							</ul>
+						</div>
+						<div class="item">
+							<h2>當月時令</h2>
+							<ul>
+								<li>地瓜核桃歐包<span>80元</span></li>
+								<li>迷迭香佛卡夏<span>65元</span></li>
+							</ul>
+						</div>
+					</div>
+					<!--col-->
+				</div>
+			</div>
+			<!--/商品列表-->
+
+			<!--店鋪與購買資訊-->
+			<div class="sence sence_3">
+				<!--row-->
+	            <div class="row">
+	            	<h3>店鋪資訊</h3>
+	            	<p>【電話】0921 428 775</p>
+	            	<p>【地址】臺灣105臺北市臺北市松山區延壽街356巷4弄2</p>
+	            	<p>【營運時間】週一到週日 12:00-20:30</p><br>
+	            	<p>【搭乘捷運板南線 (藍線)】<br>
+					至捷運市政府站一號出口，步行約400公尺<br>
+					至捷運國父紀念館站五號出口，步行約500公尺</p><br>
+					<p>【搭乘公車 (請於"聯合報站"下車)】<br>
+					212、212夜間公車、232快速公車、232紅、232綠、240、<br>
+					240直達車、270、299、919、1800、1815、5500、忠孝新幹線</p>
+	            </div>
+	            <!--row-->
+	            <div class="row">
+					<h3>電話 / Line 訂購</h3>
+	            	<p>【運費】<br>
+					同地址訂單單次滿3000元，<br>
+					可享宅配免運費。<br>
+					我們使用黑貓宅急便服務，<br>
+					運費為160元起，<br>
+					訂購商品的運費，請來信或來電確認。</p>
+					<p>【匯款】<br>
+					匯款銀行 台北富邦銀行 延吉分行<br>
+					銀行代碼 012<br>
+					帳號名稱 佳宣食品企業有限公司<br>
+					銀行帳號 490-102-022537</p>
+	            </div>
+	            <!--row-->
+				<!--map-->
+				<div class="map_google">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.3579980088725!2d121.5567268155986!3d25.05585254356789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abecc42eb709%3A0x402933577d7e1be5!2z5pyJ6ZaT6bq15YyF5bqX!5e0!3m2!1szh-TW!2stw!4v1469171915269" width="1200" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+				<!--/map-->
+
+			</div>
+			<!--/店鋪與購買資訊-->
+
+			<!--FAQ-->
+			<div class="sence sence_4">
+				<div class="block_FAQ">
+					<h3>FAQ</h3>
+					<!--item-->
+					<div class="item">
+						<div class="question">Q：如何購買商品？</div>
+						<p>將喜歡的甜點加到購物車後，填寫結帳單及配送資訊，完成線上刷卡付款或ATM虛擬帳號轉帳後就算是完成訂購，我們就會開始安排製作及出貨了。</p>
+					</div>
+					<!--item-->
+					<div class="item">
+						<div class="question">Q：可以直接FB跟你們訂購嗎？</div>
+						<p>我們都是在完成訂購後開始安排製作哦，小公寓現場也有部分現貨可以直接購買，只是品項上網站會最齊全喔～</p>
+					</div>
+					<!--item-->
+					<div class="item">
+						<div class="question">Q：有哪些付款方式？</div>
+						<p>菓實日有兩種付款方式，線上刷卡使用國泰世華線上支付平台系統，各家銀行的VISA、MASTER及JCB信用卡都可以使用。如果無法使用線上刷卡的功能，也可以選擇ATM虛擬帳號轉帳。</p>
+					</div>
+					<!--item-->
+					<div class="item">
+						<div class="question">Q：請問有貨到付款嗎？</div>
+						<p>我們都是先在完成訂購及付款後才會安排製作及出貨。</p>
+					</div>
+					<!--item-->
+				</div>
+			</div>
+			<!--/FAQ-->
+
+			<!--商品內頁-->
+			<div class="main_work" style="display:none;">
+				<!--介紹-->
+				<div class="info">
+					<!--c1-->
+					<div class="c1">
+						<!--輪播 開始-->
+			            <div class="gallery_1">
+			                <!--滾動 開始-->
+			                <div class="run">
+			                    <div class="inner">
+			                        <div class="item"><img src="src/images/pic_d_1.jpg"/></div>
+			                        <div class="item"><img src="src/images/pic_d_2.jpg"/></div>
+			                    </div>
+			                </div>
+			                <!--滾動 結束-->
+			            </div>
+			            <!--輪播 結束-->
+						<p class="summary m_hidden">300度的高溫烘烤，把麵香牢牢鎖在酥脆的外皮裡，這樣的麵包除了麵粉外，不使用其他過敏食材（特定原料）。<br>
+						想讓大家了解，即使不使用奶油、牛奶…等讓麵包柔軟的副材，也能做出口感潤澤的吐司麵包，內部有嚼感，越嚼越有滋味，這就是每天都吃不膩的脆皮吐司麵包，而外皮經高溫，產生梅納應的香氣迷人，別具甘甜風味。<br>
+						適合將麵包表面撲上生菜和風味肉品佐橄欖油或醬汁的法式開面三明治</p>
+					</div>
+					<!--/c1-->
+					<!--c2-->
+					<div class="c2">
+						<div class="info">
+							<h4>《脆皮吐司》(全素)</h4>
+							<div class="title price">價格</div>
+							<p>120元</p>
+							<div class="title">內容物</div>
+							<p>有間麵種(老麵)/台灣麵粉/水/糖/鹽</p>
+							<div class="title">淨重</div>
+							<p>12兩一袋</p>
+							<div class="title">保存期限</div>
+							<p>常溫下保存5天、冷藏0-7℃下保存7-14天</p>
+							<div class="title m_hidden">食用方法</div>
+							<p>常溫食用</p>
+							<div class="title m_hidden">商品備註</div>
+							<p>常溫類點心最好在收到的5天內食用完畢才是最佳的賞味期限！<br>
+							甜點本身不含任何防腐劑、乳化劑或抗氧化劑，如果需保存超過7天，建議放冷藏保存。<br><br>
+
+							宅配甜點會使用冷凍宅配的方式，建議您收到甜點的時候先放室溫回溫30分鐘再食用才是最佳的口感。</p>
+
+						</div>
+					</div>
+					<!--/c2-->
+				</div>
+				<!--/介紹-->
+			</div>
+			<!--/商品內頁-->
 		</main>
 		<!--/main-->
+		<!--footer-->
 		<footer>
 			<nav>
 				<ul>
@@ -141,6 +469,7 @@
 				</ul>
 			</nav>
 		</footer>
+		<!--/footer-->
 
 	</div>
 </html>
