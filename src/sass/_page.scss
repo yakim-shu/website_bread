@@ -6,71 +6,9 @@
 //輪播 1================================
 .gallery_1 {
 	margin-bottom: 20px;
-	border:1px solid #ddd;
-	// max-width:600px;
-	.bx-wrapper{
-		max-width: 100%;
-		position: relative;
-	}
-	.bx-controls {
-		display:none;
-	}
+	min-height: 500px;
 }
 
-//下面點點鈕---------------------
-.gallery_1 .bx-controls .bx-pager {
-	display: none;
-	width: 100%;
-	height: 20px;
-	position: absolute;
-	bottom: 10px;
-	text-align: center;
-	z-index:999;
-	.bx-pager-item {
-		@extend %text-hide;
-		display: inline-block;
-		width: 15px;
-		height: 15px;
-		border-radius: 15px;
-		margin-right: 10px;
-		background: #999;
-		a {
-			display:block;
-			&.active {
-				background: gold;
-			}
-		}
-	}
-}
-
-//item---------------
-.gallery_1 .item{
-	img {
-		max-width: 100%;
-		height: auto;
-	}
-}
-
-//輪播 2================================
-.gallery_2 {
-	margin-bottom: 20px;
-	.bx-wrapper{
-		max-width: 100%;
-		position: relative;
-	}
-	.bx-controls {
-		display:none;
-	}
-}
-
-
-//item---------------
-.gallery_2 .item{
-	img {
-		max-width: 100%;
-		height: auto;
-	}
-}
 
 //文字資訊================================
 //c1---------------
