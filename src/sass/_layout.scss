@@ -66,6 +66,7 @@ header {
 
 .story .inner {
 	h1 {
+
 		@extend %text-hide;
 		width:140px;
 		height:115px;
@@ -73,10 +74,12 @@ header {
 		margin: 0 auto  20px auto;
 	}
 	h2 {
+		font-family: 'cwTeXKai', serif;
 		font-size: 28px;
 		margin-bottom: 10px;
 	}
 	h3 {
+		// font-family: 'cwTeXKai', serif;
 		width: 80%;
 		margin: 0 auto;
 		color:rgba(255,255,255,0.7);
@@ -92,6 +95,17 @@ header {
 		background: rgba(0,0,0,0.3);
 		box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
 	}
+}
+
+
+@font-face {
+  font-family: 'cwTeXKai';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.ttf) format('truetype');
 }
 
 // //main=========================
