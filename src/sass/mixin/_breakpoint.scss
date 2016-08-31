@@ -7,7 +7,7 @@
 //mobile first 行動優先-----------------------------
 @mixin m_first($point) {
 	@if $point == mobile {
-		@media only screen and (min-width: 480px) {
+		@media only screen and (min-width: 414px) {
 			@content;
 		}
 	}
@@ -17,7 +17,7 @@
 		}
 	}
 	@else if $point == pc {
-		@media only screen and (min-width: 1000px) {
+		@media only screen and (min-width: 1200px) {
 			@content;
 		}
 	}

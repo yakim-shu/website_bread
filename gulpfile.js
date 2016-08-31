@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 
 // src -  原檔案路徑
 // dist - 編譯後路徑
-var sourceCss  = 'src/sass/*.scss',
+var sourceCss  = 'src/sass/**/*.scss',
     targetCss  = 'dist/css',
     sourceJade = 'src/jade/**/*.jade',
     targetJade = 'src/jade/dist',

@@ -1,0 +1,49 @@
+//menu_1=========================
+.menu_1 {
+	width:200px;
+	height:100vh;
+	background:#000;
+	position: fixed;
+	left:-200px;
+	top:0px;
+	z-index: 100;
+	li {
+		text-align: center;
+		a {
+			display: block;
+			color:#fff;
+			padding:5px;
+		}
+	}
+}
+/*=====================media-query=======================*/
+
+//pad ============================
+@include m_first(pad) {
+.menu_1 {
+	width: calc(100% - 220px);
+	height:50px;
+	line-height:40px;
+	background:none;
+	position: static;
+	float:right;
+	li {
+		width: calc(100% / 6);
+		float:left;
+		text-align: center;
+		a {
+			display: inline-block;
+			color:#fff;
+			transition: all 0.5s ease-out;
+		}
+		&:nth-last-of-type(1) {
+			margin-right: 0;
+		}
+		&:hover {
+			a {
+				border-bottom:1px solid rgba(255,255,255,0.3);
+			}
+		}
+	}
+}
+}
