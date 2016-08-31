@@ -8,6 +8,7 @@
 
 /* mixin */
 @import "mixin/default";
+@import "mixin/googlefont";
 @import "mixin/breakpoint";
 
 /* global */
@@ -20,5 +21,7 @@
 @import "block";
 
 /* page */
-@import "page";
+@import "page/story";
+@import "page/sence_1";
+@import "page/menu_1";
 
