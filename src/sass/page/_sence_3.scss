@@ -1,0 +1,148 @@
+//sence_1=========================
+.sence_3 {
+	background: #905b3b;
+	.title_1 {
+		h3 {
+			color:#fff;
+		}
+			span {
+			color:#fff;
+		}
+		&:after {
+			background-position: center bottom;
+		}
+		&:before{
+			background-image: url(../images/icon_title_3.png)
+		}
+	}
+	.item {
+		margin-bottom:20px;
+		max-width:600px;
+		margin:0 auto;
+		.c1 {
+			.gallery_2 {
+			}
+			p.summary {
+				max-width:600px;
+				margin-bottom:30px;
+				padding:0px 15px;
+				color:rgba(255,255,255,0.9);
+				font-size:14px;
+			}
+		}
+		.c2 {
+		}
+	}
+}
+
+// c1 ========
+.sence_3 .c1 .gallery_2 .bx-wrapper {
+	margin:0px auto 20px;
+	 .bx-viewport {
+		background:none;
+		border:none;
+		box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+		left:0;
+		a.pic {
+			z-index:0!important;
+		}
+	}
+	.bx-controls-direction a {
+			z-index: 0!important;
+		}
+}
+
+// c2 ========
+.sence_3 .c2 {
+	.info {
+		width:85%;
+		margin:0 auto;
+		color:#fff;
+		padding:10px 0;
+		border-top:1px solid rgba(255,255,255,0.5);
+		border-bottom:1px solid rgba(255,255,255,0.5);
+		margin-bottom: 20px;
+		h4 {
+			font-size:22px;
+			text-shadow:0 0 4px rgba(0,0,0,0.4);
+		}
+		span.label {
+			display: inline-block;
+			font-size:14px;
+			background:#db9e3f;
+			border-radius:5px;
+			padding:0px 12px;
+			position: relative;
+			left:5px;
+			bottom:3px;
+			text-shadow:0 0 4px rgba(0,0,0,0.4);
+		}
+		.list {
+			h5 {
+				display: inline-block;
+				padding:0 5px;
+				background:#683e25;
+				color:#fff;
+				font-size:13px;
+			}
+			p {
+				margin-bottom:5px;
+			}
+		}
+	}
+	.btn_box {
+		margin-bottom:20px;
+	}
+}
+
+/*=====================media-query=======================*/
+//mobile ============================
+@include m_first(mobile) {
+
+}
+
+//pad ============================
+@include m_first(pad) {
+
+}
+
+//1000 ============================
+@include breakpoint(1000) {
+.sence_3 .inner {
+	@extend %clearfix;
+	.item {
+		@extend %clearfix;
+		clear:both;
+		max-width:80%;
+		margin-bottom:80px;
+		.c1 {
+			width:48%;
+			float:left;
+			p.summary {
+				font-size:15px;
+			}
+		}
+		.c2 {
+			width:48%;
+			float:right;
+			.info {
+				width:95%;
+				padding:30px 0;
+				.list {
+					margin-bottom:10px;
+				}
+			}
+		}
+	}
+}
+
+// 偶數item =========
+.sence_3 .inner .item:nth-of-type(even) {
+	.c1 {
+		float:right;
+	}
+	.c2 {
+		float:left;
+	}
+}
+}
