@@ -2,8 +2,8 @@ $(function() {
     $('.gallery_1').vegas({
         slides: [
             { src: 'images/pic_pc_1.png' },
-            { src: 'images/pic_a_2.jpg' },
-            { src: 'images/pic_a_3.jpg' }
+            { src: 'images/pic_pc_2.jpg' },
+            { src: 'images/pic_pc_3.jpg' }
         ],
 
         align: "center",
@@ -11,9 +11,35 @@ $(function() {
         cover: "true",
         preload: "true",
         overlay: '../lib/jquery.vegas/overlays/05.png'
-
     });
 });
+
+//《外掛》 - 圖集 =============
+$(function(){
+
+    if( $(".gallery_2 a.pic").length > 1){
+        var mySlider_1 = $(".gallery_2 .run .inner").bxSlider({
+            slideWidth:1000,
+            auto:true,
+            pause:3000,
+            autoDelay:3000,
+            pager:false,
+            mode:"fade",
+            randomStart:true,
+            onSliderLoad : function(){
+                // $(".gallery_2").css({height:"auto"});
+                // $(".gallery_2 .run .inner .item img").show();
+                // $(".gallery_2 .bx-wrapper .bx-controls-direction").fadeIn("5000");
+            }
+        });
+    }else {
+        $(".gallery_2").css({"height":"auto"});
+        $(this).find("img").show();
+    }
+
+
+});
+
 
 //側選單顯示 主欄滑開 =======================
 $(function(){

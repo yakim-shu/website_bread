@@ -1,5 +1,19 @@
 /*************************block.scss*********************************/
+.hidden_768 {
+	display: none!important;
+}
+
+//pad============================
+@include m_first(pad) {
+	.hidden_768 {
+		display: block!important;
+	}
+}
+/************************* 萬用btn *********************************/
 // 萬用btn
+.btn_box {
+	text-align: center;
+}
 a.btn {
 	display: inline-block;
 	padding: 5px 20px;
@@ -14,20 +28,23 @@ a.btn {
 		text-shadow: none;
 	}
 }
-
+/************************* 萬用titile *********************************/
 // 萬用titile
 .title_1 {
-		width:180px;
+		width:135px;
 		margin: 0 auto 50px auto;
 		position: relative;
+		// border:1px solid red;
 		&:after {
 			display: block;
 			content:"";
-			width:100%;
-			height: 12px;
-			background: url(../images/bg_title.png) no-repeat center center / 100% auto;
+			width:135px;
+			height: 5px;
+			background: url(../images/bg_title.png) no-repeat center top / 215px 10px;
 			position: absolute;
-			top:35px;
+			top:40px;
+			left:0px;
+			opacity:0.5;
 		}
 		&:before {
 			display: block;
@@ -36,19 +53,19 @@ a.btn {
 			height: 25px;
 			background: url(../images/icon_title_1.png) no-repeat center center / 100% auto;
 			position: absolute;
-			left:15px;
+			left:10px;
 			top:7px;
 		}
 		h3 {
 			color:#666;
 			font-size: 18px;
 			margin-bottom: 10px;
-			padding-left: 60px;
+			padding-left: 50px;
 			padding-top: 5px;
 		}
 	span {
 		display: block;
-		color:#999;
+		color:#666;
 		font-size: 14px;
 		text-align: center;
 	}
@@ -59,7 +76,8 @@ a.btn {
 		width:220px;
 		&:after {
 			width:100%;
-			top:43px;
+			height:5px;
+			top:48px;
 		}
 		&:before {
 			width: 30px;
@@ -79,21 +97,29 @@ a.btn {
 }
 }
 
+/************************* 圖文列表 *********************************/
+
 //part_pictxt_1================================
 @mixin pictxt($col, $gap) {
 	width: ( 100% - $gap * $col *2 ) / $col;
 	margin: 0 $gap $gap*2 $gap;
 }
-
 .part_pictxt_1 {
 	@extend %clearfix;
+	padding:5px 2%;
 }
 //item
 .part_pictxt_1 a.item {
-	@include pictxt(2, 0.5%);
+	@extend %clearfix;
+	@include pictxt(2, 1.5%);
 	display: block;
+	text-align: center;
+	border:1px solid #fff;
+	background: #eee5df;
 	float: left;
 	margin-bottom: 10px;
+	transition:all 0.3s ease-out;
+	padding-top:1px;
 	.pic {
 		margin-bottom: 5px;
 		img {
@@ -101,22 +127,72 @@ a.btn {
 			height: auto;
 		}
 	}
-	h3 {
-		font-size: 18px;
-		line-height: 1.3em;
-		color: #333;
+	.txt {
+		padding:10px;
+		margin-bottom:15px;
+		h4 {
+			font-size: 20px;
+			color: #5c351e;
+		}
+		span.label {
+			display: inline-block;
+			font-size: 14px;
+			color: #a5795f;
+			margin-bottom:15px;
+			&:before {
+				display:inline-block;
+				content:"";
+				width:15px;
+				height:15px;
+				background: url(../images/icon_pictxt_1.png) no-repeat center center / 100% auto;
+				position: relative;
+				right:6px;
+				top:2px;
+			}
+			&:after {
+				display:block;
+				content:"";
+				clear:both;
+				margin:5px auto 0 auto;
+				width:20px;
+				height:1px;
+				background: #a5795f;
+			}
+		}
+		p.summary {
+			font-size: 15px;
+			color: #666;
+			display:none;
+		}
 	}
-	span.label {
+	.btn {
 		display: inline-block;
-		font-size: 14px;
-		line-height: 1.4em;
-		padding: 0px 5px;
-		background: #999;
-		color: #fff;
+		padding:2px 15px;
+		margin-bottom:20px;
+		border:1px solid #81511c;
+		color: #81511c;
+		font-size:14px;
+		transition:all 0.6s ease-out;
 	}
 }
+.part_pictxt_1 a.item:hover {
+	background:#e4d9d2;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+	.btn {
+		background:#81511c;
+		color:#fff;
+		border:1px solid #fff;
+	}
+}
+//pad============================
+@include m_first(pad) {
 
-
+	//item---------------------
+	.part_pictxt_1 a.item {
+		@include pictxt(4, 1%);
+		position: relative;
+	}
+}
 
 //FAQ ================================
 .block_FAQ {
@@ -142,42 +218,6 @@ a.btn {
 /*=====================media-query=======================*/
 //pad============================
 @include m_first(pad) {
-
-	//item---------------------
-	.part_pictxt_1 a.item {
-		@include pictxt(4, 0.5%);
-		position: relative;
-		display: table-cell;
-		vertical-align: middle;
-		//圖
-		.pic {
-			margin-bottom: 0;
-		}
-		//標題
-		h3 {
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			text-align: center;
-			background: #333;
-			color: #fff;
-			padding-top: 30%;
-			transition: all .5s;
-			opacity: 0;
-		}
-		&:hover h3{
-			opacity: 0.8;
-		}
-		//label
-		span.label{
-			position: absolute;
-			right: 5px;
-			bottom: 5px;
-			padding: 3px 10px;
-		}
-	}
 
 	//menu_1 菜單================================
 	.menu_1 .col{
