@@ -1,0 +1,36 @@
+//sence_1=========================
+.sence_4 {
+	background: #555;
+	.title_1 {
+		h3 {
+			color:#fff;
+		}
+			span {
+			color:#fff;
+		}
+		&:after {
+			background-position: center bottom;
+		}
+		&:before{
+			background-image: url(../images/icon_title_4.png)
+		}
+	}
+
+}
+
+
+/*=====================media-query=======================*/
+//mobile ============================
+@include m_first(mobile) {
+
+}
+
+//pad ============================
+@include m_first(pad) {
+
+}
+
+//1000 ============================
+@include breakpoint(1000) {
+
+}
