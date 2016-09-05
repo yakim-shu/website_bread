@@ -1,5 +1,7 @@
 //sence_1=========================
 .sence_3 {
+	height:0;
+	overflow:hidden;
 	background: #905b3b;
 	.title_1 {
 		h3 {
@@ -28,6 +30,7 @@
 				padding:0px 15px;
 				color:rgba(255,255,255,0.9);
 				font-size:14px;
+				display: none;
 			}
 		}
 		.c2 {
@@ -35,8 +38,8 @@
 	}
 }
 
-// c1 ========
-.sence_3 .c1 .gallery_2 .bx-wrapper {
+// c1 圖集 ========
+.gallery_2 .bx-wrapper {
 	margin:0px auto 20px;
 	 .bx-viewport {
 		background:none;
@@ -48,11 +51,23 @@
 		}
 	}
 	.bx-controls-direction a {
-			z-index: 0!important;
+		z-index: 0!important;
+		width:27px;
+		height:45px;
+		background:url(../images/icon_gallery_2.png) no-repeat center center / auto 100%;
+		&.bx-prev {
+			background-position: left center;
+			left:0px;
 		}
+		&.bx-next {
+			background-position: right center;
+			right:0px;
+		}
+	}
 }
 
-// c2 ========
+
+// c2 文字資訊 ========
 .sence_3 .c2 {
 	.info {
 		width:85%;
@@ -98,12 +113,23 @@
 /*=====================media-query=======================*/
 //mobile ============================
 @include m_first(mobile) {
-
+.gallery_2 .bx-wrapper .bx-controls-direction a {
+	width:40px;
+	height:65px;
+	background-size: 80px 65px;
+}
 }
 
 //pad ============================
 @include m_first(pad) {
-
+.gallery_2 .bx-wrapper .bx-controls-direction a {
+	&.bx-prev {
+		left:-20px;
+	}
+	&.bx-next {
+		right:-20px;
+	}
+}
 }
 
 //1000 ============================
@@ -120,6 +146,7 @@
 			float:left;
 			p.summary {
 				font-size:15px;
+				display:block;
 			}
 		}
 		.c2 {
@@ -135,6 +162,10 @@
 		}
 	}
 }
+
+
+
+
 
 // 偶數item =========
 .sence_3 .inner .item:nth-of-type(even) {

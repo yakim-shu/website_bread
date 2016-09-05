@@ -1,3 +1,19 @@
+// 展開麵包介紹
+$(function(){
+    // menu_1 ============
+    $(".sence_2 .part_pictxt_1 a.item").on("click", function(){
+        // var iNum = $(this).index();
+        var $body = (window.opera) ? (document.compatMode === "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //修正 Opera 問題
+        // $(".sence_3").fadeIn("slow");
+        $(".sence_3").css({"height":"auto"});
+        $body.animate({
+            scrollTop: $(".sence_3").offset().top-80
+        }, 800);
+    });
+});
+
+
+//《外掛》 - 圖集 (首頁大圖輪播) =============
 $(function() {
     $('.gallery_1').vegas({
         slides: [
@@ -14,9 +30,8 @@ $(function() {
     });
 });
 
-//《外掛》 - 圖集 =============
+//《外掛》 - 圖集 (商品介紹) =============
 $(function(){
-
     if( $(".gallery_2 a.pic").length > 1){
         var mySlider_1 = $(".gallery_2 .run .inner").bxSlider({
             slideWidth:1000,
@@ -24,20 +39,18 @@ $(function(){
             pause:3000,
             autoDelay:3000,
             pager:false,
-            mode:"fade",
+            mode:"horizontal",
             randomStart:true,
             onSliderLoad : function(){
-                // $(".gallery_2").css({height:"auto"});
-                // $(".gallery_2 .run .inner .item img").show();
-                // $(".gallery_2 .bx-wrapper .bx-controls-direction").fadeIn("5000");
+                $(".gallery_2").css({height:"auto"});
+                $(".gallery_2 .run .inner .item img").show();
+                $(".gallery_2 .bx-wrapper .bx-controls-direction").fadeIn("500");
             }
         });
     }else {
         $(".gallery_2").css({"height":"auto"});
         $(this).find("img").show();
     }
-
-
 });
 
 
@@ -48,41 +61,47 @@ $(function(){
     var bMenuStatus = 0;
 
     //覆蓋
-    $(".wrapper").after( '<div class="wrapper_overlap"></div>' );
+    // $(".wrapper").after( '<div class="wrapper_overlap"></div>' );
 
 
     // fn 選單開
     function fnNav_1Open(){
         bMenuStatus = 1;
-        $(".wrapper_box").css({"overflow":"hidden"});
-        $(".wrapper, .header").addClass("active");
-        $(".menu_1").fadeIn("fast");
-        $(".wrapper_overlap").fadeIn(200,function(){
-            $(this).css({"opacity":"0.6"});
-        });
+        $(".menu_1").addClass("active");
         $(".nav_1_switch").addClass("active");
     }
 
-
     // fn 選單關
     function fnNav_1Close(){
-        menuStatus = 0;
-        $(".wrapper_box").css({"overflow":"visible"});
-        $(".wrapper, .header").removeClass("active");
-        $(".menu_1").fadeOut(100);
-        $(".wrapper_overlap").fadeOut(50,function(){
-            $(this).css({"opacity":"0"});
-        });
+        bMenuStatus = 0;
+        $(".menu_1").removeClass("active");
         $(".nav_1_switch").removeClass("active");
     }
 
-
-    //點開按鈕 fn 選單開
-    $(".nav_1_switch").on("click", fnNav_1Open);
-
-    //點side_overlap fn 選單關
-    $(".wrapper_overlap").on("click", function(){
+    // menu_1 ============
+    $(".menu_1 li").on("click", function(){
+        var iNum = $(this).index();
+        var $body = (window.opera) ? (document.compatMode === "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //修正 Opera 問題
+        $body.animate({
+            scrollTop: $(".page").eq(iNum).offset().top-40
+        }, 800);
         if( bMenuStatus === 1){fnNav_1Close()}
+        return false;
+    });
+
+
+    //menu_1 fn 選單關
+    $(".menu_1").on("click", function(){
+        if( bMenuStatus === 1){fnNav_1Close()}
+    });
+    //點nav_1_switch fn 選單關
+    $(".nav_1_switch").on("click", function(){
+        console.log(bMenuStatus);
+        if( bMenuStatus === 1){
+            fnNav_1Close();
+        }else {
+            fnNav_1Open();
+        }
     });
 
     //手機旋轉 fn 選單關
