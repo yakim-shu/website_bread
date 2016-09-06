@@ -1,17 +1,36 @@
-// 展開麵包介紹
+// 依按鈕 attr 跳至該位置 class
 $(function(){
-    // menu_1 ============
-    $(".sence_2 .part_pictxt_1 a.item").on("click", function(){
-        // var iNum = $(this).index();
-        var $body = (window.opera) ? (document.compatMode === "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //修正 Opera 問題
-        // $(".sence_3").fadeIn("slow");
-        $(".sence_3").css({"height":"auto"});
-        $body.animate({
-            scrollTop: $(".sence_3").offset().top-80
-        }, 800);
-    });
-});
 
+    var $body = (window.opera) ? (document.compatMode === "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //修正 Opera 問題
+    var attr = "";
+    // 首頁 → 安心食材
+    $(".gallery_1 .story a.btn").on("click", function(){
+        attr = $(this).attr("attr");
+        go(attr);
+    });
+
+
+    // 商品列表 → 商品內頁
+    $(".sence_2 .part_pictxt_1 a.item").on("click", function(){
+        $(".sence_3").css({"height":"auto"});
+        attr = $(this).attr("attr");
+        go(attr);
+    });
+
+    // 商品內頁 → 我要訂購
+    $(".sence_3 .c2 a.btn").on("click", function(){
+        attr = $(this).attr("attr");
+        go(attr);
+    });
+
+    function go(target){
+        target = "."+target;
+        $body.animate({
+            scrollTop: $(target).offset().top-40
+        }, 800);
+    }
+
+});
 
 //《外掛》 - 圖集 (首頁大圖輪播) =============
 $(function() {
@@ -38,7 +57,7 @@ $(function(){
             auto:true,
             pause:3000,
             autoDelay:3000,
-            pager:false,
+            pager:true,
             mode:"horizontal",
             randomStart:true,
             onSliderLoad : function(){
