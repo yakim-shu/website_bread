@@ -1,0 +1,66 @@
+//sence_1=========================
+.sence_5 {
+	.title_1 {
+		&:before{
+			background-image: url(../images/icon_title_5.png)
+		}
+	}
+	.info {
+		width:80%;
+		margin:0 auto;
+		p {
+			font-size:15px;
+			line-height:1.9em;
+			color:#8c746d;
+			white-space:pre-wrap;
+			margin-bottom:20px;
+			letter-spacing: 1.8px;
+		}
+		.c1 {
+			margin-bottom:40px;
+		}
+		.c2 {
+
+		}
+	}
+}
+
+
+/*=====================media-query=======================*/
+//mobile ============================
+@include m_first(mobile) {
+
+}
+
+//pad ============================
+@include m_first(pad) {
+.sence_5 {
+	.info {
+		width:760px;
+		p {
+			font-size:16px;
+			line-height:1.9em;
+			margin-bottom:20px;
+		}
+		.c1 {
+			width:43%;
+			float:left;
+			margin-bottom:0;
+		}
+		.c2 {
+			width:43%;
+			float:right;
+
+		}
+	}
+}
+
+}
+
+@include m_first(pc) {
+.sence_5 {
+	.info {
+		width:900px;
+	}
+}
+}

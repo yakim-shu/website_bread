@@ -29,7 +29,7 @@ a.btn {
 	}
 }
 /************************* 萬用titile *********************************/
-// 萬用titile
+// titile_1============================
 .title_1 {
 		width:135px;
 		margin: 0 auto 50px auto;
@@ -70,7 +70,7 @@ a.btn {
 		text-align: center;
 	}
 }
-//pad ============================
+//pad
 @include m_first(pad) {
 .title_1 {
 		width:220px;
@@ -93,6 +93,44 @@ a.btn {
 		}
 	span {
 		font-size: 18px;
+	}
+}
+}
+
+// titile_2 ============================
+.title_2 {
+	margin:0 auto 20px;
+	height:55px;
+	line-height: 43px;
+	color: #8c746d;
+	text-align: center;
+	font-size:15px;
+	border:3px solid #8b746b;
+	position: relative;
+	&:before {
+		display:block;
+		content:"";
+		width:100%;
+		height:50px;
+		border:3px solid #c59474;
+		position:absolute;
+		left:5px;
+		bottom:5px;
+	}
+}
+//pad
+@include m_first(pad) {
+.title_2 {
+	height:55px;
+	line-height:43px;
+	font-size:14px;
+	text-align: left;
+	margin-bottom:30px;
+	padding-left:25px;
+	border-width:4px;
+	&:before {
+		height:50px;
+		border-width:4px;
 	}
 }
 }
@@ -120,7 +158,6 @@ a.btn {
 	margin-bottom: 10px;
 	padding-top:1px;
 	box-shadow: 0 1px 1.5px rgba(0,0,0,0.1);
-	transition:all 0.6s ease-out;
 	.pic {
 		margin-bottom: 5px;
 		img {
@@ -131,6 +168,7 @@ a.btn {
 	.txt {
 		padding:10px;
 		margin-bottom:15px;
+		transition:all 2s ease-out;
 		h4 {
 			font-size: 20px;
 			color: #5c351e;
@@ -177,12 +215,17 @@ a.btn {
 	}
 }
 .part_pictxt_1 a.item:hover {
-	// background:#e4d9d2;
+	background: darken(#e4d9d2, 2);
 	box-shadow: 0 5px 20px rgba(0,0,0,0.07);
 	.btn {
 		background:#b29886;
 		color:#fff;
 		border:1px solid #b29886;
+	}
+	.txt {
+		// position: relative;
+		// bottom:10px;
+
 	}
 }
 
