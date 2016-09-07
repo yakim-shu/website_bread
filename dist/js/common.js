@@ -1,34 +1,25 @@
+// 《工具函式》 滑到某位置
+function go(target){
+    var $body = (window.opera) ? (document.compatMode === "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //修正 Opera 問題
+    target = "."+target;
+    $body.animate({
+        scrollTop: $(target).offset().top-40
+    }, 800);
+}
+
 // 依按鈕 attr 跳至該位置 class
 $(function(){
 
-    var $body = (window.opera) ? (document.compatMode === "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //修正 Opera 問題
     var attr = "";
-    // 首頁 → 安心食材
-    $(".gallery_1 .story a.btn").on("click", function(){
+    $("a.move").on("click", function(){
         attr = $(this).attr("attr");
         go(attr);
     });
-
 
     // 商品列表 → 商品內頁
     $(".sence_2 .part_pictxt_1 a.item").on("click", function(){
-        $(".sence_3").css({"height":"auto"});
-        attr = $(this).attr("attr");
-        go(attr);
+        $(".sence_3").css({"height":"auto","opacity":"1"});
     });
-
-    // 商品內頁 → 我要訂購
-    $(".sence_3 .c2 a.btn").on("click", function(){
-        attr = $(this).attr("attr");
-        go(attr);
-    });
-
-    function go(target){
-        target = "."+target;
-        $body.animate({
-            scrollTop: $(target).offset().top-40
-        }, 800);
-    }
 
 });
 
@@ -49,39 +40,11 @@ $(function() {
     });
 });
 
-//《外掛》 - 圖集 (商品介紹) =============
-$(function(){
-    if( $(".gallery_2 a.pic").length > 1){
-        var mySlider_1 = $(".gallery_2 .run .inner").bxSlider({
-            slideWidth:1000,
-            auto:true,
-            pause:3000,
-            autoDelay:3000,
-            pager:true,
-            mode:"horizontal",
-            randomStart:true,
-            onSliderLoad : function(){
-                $(".gallery_2").css({height:"auto"});
-                $(".gallery_2 .run .inner .item img").show();
-                $(".gallery_2 .bx-wrapper .bx-controls-direction").fadeIn("500");
-            }
-        });
-    }else {
-        $(".gallery_2").css({"height":"auto"});
-        $(this).find("img").show();
-    }
-});
-
-
 //側選單顯示 主欄滑開 =======================
 $(function(){
 
     //開關狀態
     var bMenuStatus = 0;
-
-    //覆蓋
-    // $(".wrapper").after( '<div class="wrapper_overlap"></div>' );
-
 
     // fn 選單開
     function fnNav_1Open(){
