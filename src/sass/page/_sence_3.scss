@@ -2,7 +2,10 @@
 .sence_3 {
 	height:0;
 	overflow:hidden;
+	opacity:0;
+	// display:none;
 	background: #905b3b;
+	transition:all 0.5s ease-out;
 	.title_1 {
 		h3 {
 			color:#fff;
