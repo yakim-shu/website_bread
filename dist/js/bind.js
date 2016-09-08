@@ -2,33 +2,51 @@ $(function(){
 	/*=======================getJSON=======================*/
 	$.getJSON("js/data.json", function(json){
 		var data = json;
-		fnWork(data);
+		// fnWork(data);
+		// 商品列表 → 商品內頁
+	    $(".sence_2 .part_pictxt_1 a.item").on("click", function(){
+	        $(".sence_3").css({"height":"auto","opacity":"1"});
+	        var index = $(this).index();
+	        console.log(index);
+	    	fnWork(data, index);
+	    });
 
 	});
 
 
 	/*=======================專案=======================*/
 	//fnWork----
-	function fnWork(data){
+	function fnWork(data, index){
 		// -----------------------------------------
+
+		$(".sence_3 .inner .item").remove();
 
 		var pic = "";
 		var info = "";
 		var item = "";
 		var $allItem = "";
+		var arrType = ["經典菜單", "歐式手感", "吐司"];
+		var arrType_eng = ["Classic", "Artisan Bread", "Toast"];
 
+		type = arrType[index];
+		currentData = data[type];
+
+		$(".sence_3 .inner .title_1 h3").text(type);
+		$(".sence_3 .inner .title_1 span").text(arrType_eng[index]);
 
 		// item ==========================
-		for(var i=0; i<data.length; i++){
+		for(var i=0; i<currentData.length; i++){
 
 			var gallery = "";
 
 			// [ string ] - 圖集
-			for (var j=0; j<data[i]["gallery"].length; j++) {
-				pic = '<a class="pic"><img src="images/'+ data[i].gallery[j] +'"/></a>';
-				gallery += pic;
+			for (var j=0; j<currentData[i]["gallery"].length; j++) {
+				if (currentData[i]["gallery"][j] == ""){
+				}else {
+					pic = '<a class="pic"><img src="images/'+ currentData[i].gallery[j] +'"/></a>';
+					gallery += pic;
+				}
 			}
-
 			// [ string ] - 文字資訊
 			info = '\
 			<div class="c1">\
@@ -37,30 +55,30 @@ $(function(){
 						<div class="inner">'+ gallery +'</div>\
 					</div>\
 				</div>\
-				<p class="summary">'+ data[i].summary +'</p>\
+				<p class="summary">'+ currentData[i].summary +'</p>\
 			</div>\
 			<div class="c2">\
 				<div class="info">\
-				    <h4>《 '+ data[i].title +' 》<span class="label">'+ data[i].tag +'</span></h4>\
+				    <h4>《 '+ currentData[i].title +' 》<span class="label">'+ currentData[i].tag +'</span></h4>\
 				    <div class="list">\
 				        <h5>價格</h5>\
-				        <p>'+ data[i].pirce +'元</p>\
+				        <p>'+ currentData[i].pirce +'元</p>\
 				    </div>\
 				    <div class="list">\
 				        <h5>內容物</h5>\
-				        <p>'+ data[i].content +'</p>\
+				        <p>'+ currentData[i].content +'</p>\
 				    </div>\
 				    <div class="list hidden_768">\
 				        <h5>淨重</h5>\
-				        <p>'+ data[i].weight +'</p>\
+				        <p>'+ currentData[i].weight +'</p>\
 				    </div>\
 				    <div class="list hidden_768">\
 				        <h5>保存期限</h5>\
-				        <p>'+ data[i].expiration +'</p>\
+				        <p>'+ currentData[i].expiration +'</p>\
 				    </div>\
 				    <div class="list hidden_768">\
 				        <h5>商品備註</h5>\
-				        <p>'+ data[i].note +'</p>\
+				        <p>'+ currentData[i].note +'</p>\
 				    </div>\
 				</div>\
 				<div class="btn_box"><a href="javascript:;" attr="sence_5" class="btn move">我要訂購</a></div>\
@@ -74,25 +92,25 @@ $(function(){
 
 
 		//《外掛》 - 圖集 (商品介紹) =============
-	    if( $(".gallery_2 a.pic").length > 1){
-	        var mySlider_1 = $(".gallery_2 .run .inner").bxSlider({
-	            slideWidth:1000,
-	            auto:true,
-	            pause:3000,
-	            autoDelay:3000,
-	            pager:true,
-	            mode:"horizontal",
-	            randomStart:true,
-	            onSliderLoad : function(){
-	                $(".gallery_2").css({height:"auto"});
-	                $(".gallery_2 .run .inner .item img").show();
-	                $(".gallery_2 .bx-wrapper .bx-controls-direction").fadeIn("500");
-	            }
-	        });
-	    }else {
-	        $(".gallery_2").css({"height":"auto"});
-	        $(this).find("img").show();
-	    }
+		$(".gallery_2").each(function(i){
+			if( $(this).find("a.pic").length > 0 ){
+				$(this).find(".run .inner").bxSlider({
+		            slideWidth:1000,
+		            auto:true,
+		            pause:3000,
+		            autoDelay:3000,
+		            pager:true,
+		            mode:"horizontal",
+		            randomStart:true,
+		            onSliderLoad : function(){
+		                $(this).css({height:"auto"});
+		                $(this).find(".run .inner .item img").show();
+		                $(this).find(".bx-wrapper .bx-controls-direction").fadeIn("500");
+		            }
+		        });
+			}
+		});
+
 
 	    //商品內頁 → 我要訂購
 	    $(".sence_3 .c2 a.btn").on("click", function(){
