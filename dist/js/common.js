@@ -7,20 +7,19 @@ function go(target){
     }, 800);
 }
 
-// 依按鈕 attr 跳至該位置 class
+// 商品列表 → 該類型
 $(function(){
 
+});
+
+
+// 依按鈕 attr 跳至該位置 class
+$(function(){
     var attr = "";
     $("a.move").on("click", function(){
         attr = $(this).attr("attr");
         go(attr);
     });
-
-    // 商品列表 → 商品內頁
-    $(".sence_2 .part_pictxt_1 a.item").on("click", function(){
-        $(".sence_3").css({"height":"auto","opacity":"1"});
-    });
-
 });
 
 //《外掛》 - 圖集 (首頁大圖輪播) =============
