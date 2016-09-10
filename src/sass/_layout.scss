@@ -10,13 +10,78 @@ html, body {
 }
 
 
+/*social_1 ========*/
+.social_1{
+	display:block;
+	height:40px;
+	text-align:center;
+	position: relative;
+	top:10px;
+	opacity:0;
+	transition:all 0.5s ease-out;
+	transition-delay: 0.5s;
+	a {
+		display:inline-block;
+		width:30px;
+		height:30px;
+		margin-right:10px;
+		border-radius:15px;
+		border:2px solid #cb906d;
+		background:#58321b url(../images/icon_social.png) no-repeat center center;
+		background-size: auto 100%;
+		transition:all 0.2s;
+		&.fb {
+			background-position:left center
+		}
+		&.line {
+			background-position:right center;
+		}
+		&:hover {
+			background-color:#b57854;
+		}
+	}
+}
+
+.menu_1.active .social_1 {
+	opacity:1;
+}
+
+@include m_first(pad) {
+.social_1 {
+	opacity:1;
+	top:22px;
+	position:fixed;
+	right:7px;
+	top:29px;
+	a {
+		width:25px;
+		height:25px;
+		border-radius: 20px;
+		border-color:#fff;
+		&.fb {
+			position:absolute;
+			top:0;
+			right:0;
+		}
+		&.line {
+			display: none;
+		}
+	}
+}
+}
+
+
+
+
+
 .wrapper {
 	position: relative;
 	background: url(../images/bg_wrapper.png) repeat center center / 25px 25px;
+
     header {
     	width:100%;
     	height:55px;
-		padding: 10px;
+		padding:0 10px;
 		background: #222;
 		position: fixed;
 		left: 0;
@@ -27,7 +92,6 @@ html, body {
 		.inner {
 			max-width: 1200px;
 			margin:0 auto;
-			padding-top:2px;
 			position: relative;
 		}
     }
@@ -99,22 +163,26 @@ header {
 		display: block;
 		width: 154px;
 		height: 35px;
-		margin: 0 auto;
+		margin: 10px auto;
 		background: url(../images/logo_header.png) no-repeat center top / 100% auto;
 	}
 
 }
 //pad ============================
 @include m_first(pad) {
-.wrapper header {
-	height: 80px;
-	a.logo {
-		float:left;
-		width: 220px;
-		height: 50px;
-	}
-	.nav_1_switch {
-		display: none;
+.wrapper {
+	border:20px solid #222;
+	header {
+		height: 80px;
+		a.logo {
+			float:left;
+			width: 220px;
+			height: 50px;
+			margin: 15px auto;
+		}
+		.nav_1_switch {
+			display: none;
+		}
 	}
 }
 }

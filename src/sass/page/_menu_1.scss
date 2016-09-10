@@ -2,7 +2,7 @@
 .menu_1 {
 	width:100%;
 	height:100%;
-	background:rgba(0,0,0,0.95);
+	background:rgba(0,0,0,0.98);
 	border:10px solid #905b3b;
 	position: fixed;
 	left:0px;
@@ -48,12 +48,10 @@
 	width: calc(100% - 220px);
 	background:none;
 	margin-bottom:0;
-	position: static;
 	float:right;
 	border:0;
 	box-shadow: none;
 	position: relative;
-	top:20px;
 	.menu_1_inner {
 		width:100%;
 		li {
@@ -64,6 +62,8 @@
 			a {
 				display: inline-block;
 				color:#fff;
+				margin-bottom:0;
+				padding:26px 0px;
 				transition: all 0.5s ease-out;
 			}
 			&:nth-last-of-type(1) {
@@ -76,13 +76,12 @@
 // hover 效果
 .menu_1_inner li a {
 	position: relative;
-
 	&:before, &:after {
 		display: block;
 		content:"";
 		width:0;
-		height:2px;
-		background:#b57854;
+		height:6px;
+		background:#999;
 		position: absolute;
 		bottom:0;
 		transition:all 0.5s;
@@ -93,11 +92,17 @@
 	&:after {
 		right:50%;
 	}
+	// hover
 	&:hover {
-		&:before {
+		&:before, &:after {
 			width:50%;
 		}
-		&:after {
+	}
+	// active
+	&.active {
+		color: #cb906d;
+		&:before, &:after {
+			background:#cb906d;
 			width:50%;
 		}
 	}
