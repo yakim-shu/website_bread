@@ -3,15 +3,14 @@
 	height:0;
 	overflow:hidden;
 	opacity:0;
-	// display:none;
-	background: #905b3b;
+	background: $deep-brown;
 	transition:all 0.5s ease-out;
 	.title_1 {
 		h3 {
-			color:#fff;
+			color: $white;
 		}
 			span {
-			color:#fff;
+			color: $white;
 		}
 		&:after {
 			background-position: center bottom;
@@ -32,7 +31,7 @@
 				max-width:600px;
 				margin-bottom:30px;
 				padding:0px 15px;
-				color:rgba(255,255,255,0.9);
+				color:rgba($white, 0.9);
 				font-size:14px;
 				display: none;
 			}
@@ -48,7 +47,7 @@
 	 .bx-viewport {
 		background:none;
 		border:none;
-		box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+		box-shadow: 0 5px 15px rgba($black, 0.2);
 		left:0;
 		a.pic {
 			z-index:0!important;
@@ -60,12 +59,12 @@
 		z-index: 0!important;
 		width:27px;
 		height:45px;
-		background:#905b3b url(../images/icon_gallery_2.png) no-repeat center center / auto 100%;
-		border:3px solid #bc9c85;
-		box-shadow: 0 0 5px rgba(0,0,0,0.3) inset, 0 0 10px rgba(0,0,0,0.4);
+		background:$deep-brown url(../images/icon_gallery_2.png) no-repeat center center / auto 100%;
+		border:3px solid $light-brown;
+		box-shadow: 0 0 5px rgba($black, 0.3) inset, 0 0 10px rgba($black, 0.4);
 		&:hover {
-			background-color:lighten(#905b3b, 10);
-			box-shadow: 0 0 5px rgba(0,0,0,0.2) inset, 0 0 15px rgba(0,0,0,0.5);
+			background-color:darken($deep-brown, 10);
+			box-shadow: 0 0 5px rgba($black, 0.2) inset, 0 0 15px rgba($black, 0.5);
 		}
 		&.bx-prev {
 			background-position: left center;
@@ -84,10 +83,10 @@
 			width:12px;
 			height:12px;
 			border-radius: 10px;
-			background:rgba(255,255,255,0.7);
-			box-shadow: 0 0 10px 3px rgba(0,0,0,0.2);
+			background:rgba($white, 0.7);
+			box-shadow: 0 0 10px 3px rgba($black, 0.2);
 			&:hover {
-				background:rgba(255,255,255,1);
+				background:rgba($white, 1);
 			}
 		}
 	}
@@ -99,31 +98,31 @@
 	.info {
 		width:85%;
 		margin:0 auto;
-		color:#fff;
+		color: $white,;
 		padding:10px 0;
-		border-top:1px solid rgba(255,255,255,0.5);
-		border-bottom:1px solid rgba(255,255,255,0.5);
+		border-top:1px solid rgba($white, 0.5);
+		border-bottom:1px solid rgba($white, 0.5);
 		margin-bottom: 20px;
 		h4 {
 			font-size:22px;
-			text-shadow:0 0 4px rgba(0,0,0,0.4);
+			text-shadow:0 0 4px rgba($black, 0.4);
 		}
 		span.label {
 			display: inline-block;
 			font-size:14px;
-			background:#db9e3f;
+			background: $yellow;
 			border-radius:5px;
 			padding:0px 12px;
 			position: relative;
 			left:5px;
 			bottom:3px;
-			text-shadow:0 0 4px rgba(0,0,0,0.4);
+			text-shadow:0 0 4px rgba($black, 0.4);
 		}
 		.list {
 			h5 {
 				display: inline-block;
 				padding:0 5px;
-				background:#683e25;
+				background: darken($deep-brown, 12);
 				color:#fff;
 				font-size:13px;
 			}
@@ -200,10 +199,10 @@
 					padding:10px 100px;
 					background:none;
 					border-radius:0;
-					box-shadow:0 0 5px 0px rgba(0, 0, 0, 0.2);
+					box-shadow:0 0 5px 0px rgba($black, 0.2);
 					&:hover {
-						background:rgba(255,255,255,0.9);
-						color:#905b3b;
+						background:rgba($white, 0.9);
+						color: $deep-brown;
 					}
 				}
 			}

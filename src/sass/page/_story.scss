@@ -6,13 +6,13 @@
 	display: flex;
 	justify-content: center;
 	padding:20px;
-	text-shadow: 0 0 5px #333;
-	background: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+	text-shadow: 0 0 5px $deep-gray;
+	background: linear-gradient(to top, rgba($black, 0) 0%, rgba($black, 0.5) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
 	.inner {
 		align-self:center;
 		text-align: center;
-		color: #fff;
+		color: $white;
 	}
 }
 
@@ -32,14 +32,14 @@
 	h3 {
 		width: 80%;
 		margin: 0 auto;
-		color:rgba(255,255,255,0.8);
+		color:rgba($white, 0.8);
 		font-size: 14px;
 		margin-bottom: 20px;
 	}
 }
 
 .story .inner a.btn {
-	border:3px solid #fff;
+	border:1px solid $white;
 	background:none;
 	vertical-align: middle;
 	position:relative;
@@ -51,7 +51,7 @@
 		left:-50%;
 		width:200%;
 		height:200%;
-		background:rgba(0,0,0,0.8);
+		background:rgba(darken($deep-brown, 10), 0.8);
 		top:-50%;
 		transform: translate3d(0, -100%, 0) rotate3d(0, 0, 1, -10deg);
 	}
@@ -80,7 +80,7 @@
 	}
 	&:after {
 		top:0;
-		color:#fff;
+		color: $white;
 	}
 	span {
 		opacity:0;
@@ -114,6 +114,7 @@
 	}
 	a.btn {
 		padding: 10px 30px;
+		border-width: 2px;
 		&:after {
 			padding:10px 0;
 		}

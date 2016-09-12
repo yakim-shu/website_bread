@@ -1,12 +1,14 @@
 //sence_1=========================
 .sence_4 {
-	background: #555;
+	max-width:100%;
+	background: $gray;
+	background-image:linear-gradient(to top right, $light-brown, darken($deep-brown, 5));
 	.title_1 {
 		h3 {
-			color:#fff;
+			color: $white;
 		}
 			span {
-			color:#fff;
+			color: $white;
 		}
 		&:after {
 			background-position: center bottom;

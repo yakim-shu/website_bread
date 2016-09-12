@@ -26,8 +26,8 @@ html, body {
 		height:30px;
 		margin-right:10px;
 		border-radius:15px;
-		border:2px solid #cb906d;
-		background:#58321b url(../images/icon_social.png) no-repeat center center;
+		border:2px solid $light-brown;
+		background:$deep-brown url(../images/icon_social.png) no-repeat center center;
 		background-size: auto 100%;
 		transition:all 0.2s;
 		&.fb {
@@ -37,7 +37,7 @@ html, body {
 			background-position:right center;
 		}
 		&:hover {
-			background-color:#b57854;
+			background-color:$brown;
 		}
 	}
 }
@@ -57,7 +57,7 @@ html, body {
 		width:25px;
 		height:25px;
 		border-radius: 20px;
-		border-color:#fff;
+		border-color:$white;
 		&.fb {
 			position:absolute;
 			top:0;
@@ -82,7 +82,7 @@ html, body {
     	width:100%;
     	height:55px;
 		padding:0 10px;
-		background: #222;
+		background: $deep-gray;
 		position: fixed;
 		left: 0;
 		top: 0;
@@ -108,7 +108,7 @@ html, body {
 		display:block;
 		width:15px;
 		height:3px;
-		background:#fff;
+		background: $white;
 		position:relative;
 		left:5px;
 		top:10px;
@@ -117,7 +117,7 @@ html, body {
 			width:25px;
 			height:3px;
 			content:" ";
-			background:#fff;
+			background: $white;
 			position:relative;
 			left:0px;
 			top:-8px;
@@ -129,7 +129,7 @@ html, body {
 			width:25px;
 			height:3px;
 			content:" ";
-			background:#fff;
+			background: $white;
 			position:relative;
 			left:0px;
 			top:5px;
@@ -141,11 +141,11 @@ html, body {
 	&.active .icon{
 		height:0px;
 		&:before {
-			background:#905b3b;
+			background:$deep-brown;
 			transform:rotate(45deg) translate3d(5.5px, 5.5px, 0px);
 		}
 		&:after {
-			background:#905b3b;
+			background:$deep-brown;
 			transform:rotate(-45deg) translate3d(5.5px, -5.5px, 0px);
 		}
 	}
@@ -171,7 +171,7 @@ header {
 //pad ============================
 @include m_first(pad) {
 .wrapper {
-	border:20px solid #222;
+	// border:20px solid $deep-gray;
 	header {
 		height: 80px;
 		a.logo {
