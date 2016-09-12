@@ -7,11 +7,31 @@ function go(target){
     }, 800);
 }
 
-// 商品列表 → 該類型
+//scroll ============================================
 $(function(){
+    $("html,body").animate({scrollTop: 0});
 
-});
+    $(window).scroll(function(){
 
+        //nav=====================
+        var st = $(window).scrollTop();
+        var wh = $(window).height();
+        var index;
+
+        setTimeout(function(){
+            var current = 0;
+            $(".page").each(function(i,element){
+                if(st > $(".page").eq(i).offset().top -100 ){
+                    current = i;
+                    $(".menu_1 a").eq(current)
+                .addClass("active")
+                .parent("li").siblings().find("a").removeClass("active");
+                }
+            });
+        }, 400);
+    });
+
+    }).scroll();
 
 // 依按鈕 attr 跳至該位置 class
 $(function(){
