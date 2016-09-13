@@ -1,4 +1,4 @@
-// 《工具函式》 滑到某位置
+// 《工具函式》 滑到某位置 ============================================
 function go(target){
     var $body = (window.opera) ? (document.compatMode === "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //修正 Opera 問題
     target = "."+target;
@@ -6,6 +6,32 @@ function go(target){
         scrollTop: $(target).offset().top-40
     }, 800);
 }
+
+// google-map ============================================
+$(function(){
+    var stylesArray = [{"featureType":"all","elementType":"all","stylers":[{"hue":"#ffaa00"},{"saturation":"-33"},{"lightness":"10"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"on"}]}];
+
+  $('.map_google').tinyMap({
+    center : "25.056130, 121.558937", //地圖中心，經緯度或地址
+    zoom : 16, //地圖縮放
+    draggable : false, //拖拉要鎖住，避免手機操作亂移
+    styles : stylesArray,
+    marker : [ //地點標示
+            {
+            'addr':"25.056130, 121.558937", //地點，經緯度或地址
+            icon        : {
+                // 圖示網址
+                url: '../dist/images/icon_map.png',
+                // 縮放尺寸
+                scaledSize: [110, 75]
+            },
+            'title': '有間麵包店',    //hover標題
+            'text':"<b>有間麵包店</b><br/>台北市松山區延壽街356巷四弄二號" //對話泡訊息
+            }
+        ]
+    });
+});
+
 
 //scroll ============================================
 $(function(){
