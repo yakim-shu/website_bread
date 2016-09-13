@@ -19,9 +19,9 @@ $(function(){
     marker : [ //地點標示
             {
             'addr':"25.056130, 121.558937", //地點，經緯度或地址
-            icon        : {
+            icon: {
                 // 圖示網址
-                url: '../dist/images/icon_map.png',
+                url: 'https://yakim-shu.github.io/website_bread/images/icon_map.png',
                 // 縮放尺寸
                 scaledSize: [110, 75]
             },
