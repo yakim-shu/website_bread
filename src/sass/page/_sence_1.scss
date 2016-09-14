@@ -25,7 +25,7 @@
 		}
 		p {
 			display: none;
-			z-index:200;
+			z-index:15;
 		}
 		&:before {
 			display:block;
@@ -34,7 +34,7 @@
 			height:100%;
 			position: absolute;
 			background: linear-gradient(to bottom, rgba($brown, 0) 20%, rgba($brown, 1) 100%);
-			z-index:100;
+			z-index:10;
 		}
 	}
 	.txt {
@@ -43,7 +43,7 @@
 		left:0;
 		bottom:10px;
 		text-align: center;
-		z-index:200;
+		z-index:15;
 		h3 {
 			display: inline-block;
 			border:1px solid $white;

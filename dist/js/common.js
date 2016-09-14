@@ -8,6 +8,23 @@ function go(target){
 }
 
 // google-map ============================================
+
+// Set up before tinyMap executes.
+// $.fn.tinyMapConfigure({
+//     // Google Maps API location
+//     'api': '//maps.google.com/maps/api/js',
+//     // Map Lanuguage
+//     'language': 'zh-TW',
+//     // Google Maps API Libraries
+//     'libraries': 'adsense, geometry',
+//     // MarkerClusterer library location
+//     'clusterer': '//google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer_compiled.js'
+// });
+
+// $.fn.tinyMapConfigure({
+//     'key' : 'AIzaSyAeW759B4OhET3HY8GvMwYGwGlcUsS97NU'
+// });
+
 $(function(){
     var stylesArray = [{"featureType":"all","elementType":"all","stylers":[{"hue":"#ffaa00"},{"saturation":"-33"},{"lightness":"10"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"on"}]}];
 
@@ -21,7 +38,7 @@ $(function(){
             'addr':"25.056130, 121.558937", //地點，經緯度或地址
             icon: {
                 // 圖示網址
-                url: 'https://yakim-shu.github.io/website_bread/images/icon_map.png',
+                url: 'images/icon_map.png',
                 // 縮放尺寸
                 scaledSize: [110, 75]
             },
