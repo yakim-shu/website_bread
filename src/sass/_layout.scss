@@ -52,7 +52,7 @@ html, body {
 	top:22px;
 	position:fixed;
 	right:7px;
-	top:29px;
+	top:90px;
 	a {
 		width:25px;
 		height:25px;
@@ -64,13 +64,19 @@ html, body {
 			right:0;
 		}
 		&.line {
-			display: none;
+			position:absolute;
+			top:0;
+			right:40px;
 		}
 	}
 }
 }
 
-
+@include m_first(pc) {
+.social_1 {
+	top:27px;
+}
+}
 
 
 

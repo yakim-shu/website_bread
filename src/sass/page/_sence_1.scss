@@ -177,6 +177,7 @@
 	.txt {
 		background: darken($deep-brown, 5);
 		transition:0.5s;
+		transition-delay:0.3s;
 		h3 {
 			bottom: 5%;
 			transition:0.3;
@@ -197,7 +198,7 @@
 
 	}
 	&:hover .txt{
-		background: darken($gray, 5);
+		background: darken($gray, 10);
 	}
 }
 

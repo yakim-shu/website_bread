@@ -81,7 +81,7 @@ $(function(){
 				        <p>'+ currentData[i].note +'</p>\
 				    </div>\
 				</div>\
-				<div class="btn_box"><a href="javascript:;" attr="sence_5" class="btn move">我要訂購</a></div>\
+				<div class="btn_box"><a href="javascript:;" class="btn">我要訂購</a></div>\
 			</div>';
 
 			item = '<div class="item">' + info + "</div>";
@@ -111,14 +111,13 @@ $(function(){
 			}
 		});
 
-
-	    //商品內頁 → 我要訂購
-	    $(".sence_3 .c2 a.btn").on("click", function(){
-	        attr = $(this).attr("attr");
-	        go(attr);
+		// 我要訂購 - 跳 lightbox
+	    $(".sence_3 a.btn").on("click", function(){
+	        $(".light_box").css({"display":"flex","opacity":"1"});
 	    });
-
-
+	    $(".light_box .btn_close").on("click", function(){
+	        $(".light_box").fadeOut("fast");
+	    });
 
 	}
 
